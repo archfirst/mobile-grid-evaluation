@@ -1,0 +1,97 @@
+/* -----------------------------------------------------------------------------
+ * Positions Table
+ * -------------------------------------------------------------------------- */
+#positions-table-container {
+    overflow: auto;
+}
+
+#positions-table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+#positions-table thead tr {
+    background-color: #808080;
+    height: 30px;
+}
+
+#positions-table th ,
+#positions-table td {
+    padding: 0 5px;
+}
+
+#positions-table th {
+    color: #FFFFFF;
+    font-size: 13px;
+    text-shadow: none;
+}
+
+#positions-table td {
+    border-bottom: solid 1px #B2B2B2;
+    font-size: 14px;
+    height: 32px;
+}
+
+#positions-table .security {
+    text-align: left;
+}
+
+#positions-table .symbol {
+    text-align: center;
+}
+
+#positions-table .quantity {
+    text-align: right;
+}
+
+#positions-table .last-trade {
+    text-align: right;
+}
+
+#positions-table .market-value {
+    text-align: right;
+}
+
+#positions-table .price-paid {
+    text-align: right;
+}
+
+#positions-table .total-cost {
+    text-align: right;
+}
+
+#positions-table .gain {
+    text-align: right;
+}
+
+#positions-table .gain-percent {
+    text-align: right;
+}
+
+/* -----------------------------------------------------------------------------
+ * Narrow Layout (0-499)
+ * -------------------------------------------------------------------------- */
+@media screen and (max-width: 499px) {
+    .layout-info:before { content: "Narrow Layout (0-499)"; }
+
+    /* hide priority2 and priority3 columns */
+    .priority2 { display: none; }
+    .priority3 { display: none; }
+}
+
+/* -----------------------------------------------------------------------------
+ *  Medium Layout (500-899)
+ * -------------------------------------------------------------------------- */
+@media screen and (min-width: 500px) and (max-width: 899px) {
+    .layout-info:before { content: "Medium Layout (500-899)"; }
+
+    /* hide priority3 columns */
+    .priority3 { display: none; }
+}
+
+/* -----------------------------------------------------------------------------
+ *  Wide Layout (900+)
+ * -------------------------------------------------------------------------- */
+@media screen and (min-width: 900px) {
+    .layout-info:before { content: "Wide Layout (900+)"; }
+}

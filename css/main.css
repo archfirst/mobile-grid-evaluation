@@ -1,0 +1,27 @@
+﻿html, body, div, h1, ul {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    padding: 18px;
+}
+
+h1 {
+    font: bold normal 24px/24px Arial;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 16px;
+}
+
+a {
+    font-size: 16px;
+}

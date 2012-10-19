@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * Colors
+ * -------------------------------------------------------------------------- */
+/* override the default grey background */
+.ui-body-c {
+    background: white;
+}
+
+.positive {
+    color: #F79F20;
+    font-weight: bold;
+}
+
+.negative {
+    color: #EF4623;
+    font-weight: bold;
+}
+
+/* -----------------------------------------------------------------------------
+ * Selected Position
+ * -------------------------------------------------------------------------- */
+#selected-position {
+    background-color: #E0E0E0;
+    font: normal normal 20px/35px Arial;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Layout Information
+ * -------------------------------------------------------------------------- */
+.layout-info {
+    font-size: 10px;
+    margin-top: 10px;
+}

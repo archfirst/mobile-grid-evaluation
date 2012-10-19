@@ -1,0 +1,68 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Mobile | HTML table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+
+<body>
+    <section id="positions" data-role="page">
+
+        <header id="positions-header" data-role="header">
+            <h1>jQuery Mobile | HTML table</h1>
+        </header>
+
+        <section id="positions-section" data-role="content">
+            <div id="selected-position"></div>
+
+            <div id="positions-table-container">
+                <table id="positions-table">
+                    <thead>
+                        <tr>
+                            <th class="priority1 security">Security</th>
+                            <th class="priority2 symbol">Symbol</th>
+                            <th class="priority1 quantity">Quantity</th>
+                            <th class="priority1 last-trade">Last Trade</th>
+                            <th class="priority1 market-value">Market Value</th>
+                            <th class="priority2 price-paid">Price Paid</th>
+                            <th class="priority3 total-cost">Total Cost</th>
+                            <th class="priority3 gain">Gain</th>
+                            <th class="priority2 gain-percent">Gain %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="layout-info">, Window Size: <span class="window-size"></span></div>
+        </section>
+
+    </section>
+
+    <script id="positionTemplate" type="text/x-mustache-tmpl">
+    <tr>
+        <td class="priority1 security">{{security}}}</td>
+        <td class="priority2 symbol">{{symbol}}</td>
+        <td class="priority1 quantity">{{quantity}}</td>
+        <td class="priority1 last-trade">{{formatMoney lastTrade}}</td>
+        <td class="priority1 market-value">{{formatMoney marketValue}}</td>
+        <td class="priority2 price-paid">{{formatMoney pricePaid}}</td>
+        <td class="priority3 total-cost">{{formatMoney totalCost}}</td>
+        <td class="priority3 gain {{getSign gain}}">{{formatMoney gain}}</td>
+        <td class="priority2 gain-percent {{getSign gainPercent}}">{{formatPercent gainPercent}}</td>
+    </tr>
+    </script>
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="js/handlebars-1.0.rc.1.js"></script>
+    <script src="js/jquery.format-1.2.js"></script>
+    <script src="../data/positions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
