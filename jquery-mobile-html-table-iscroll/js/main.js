@@ -49,10 +49,11 @@ $(document).ready(function() {
     });
 
     // Fit table on resize events
-    var headerHeight = $('#positions-header h1').outerHeight(true);
+    var headerHeight = $('#positions-header').outerHeight(true);
+    var postionsSectionPaddingTop = 15;
     var selectionInfoHeight = $('#selected-position').outerHeight(true);
     var layoutInfoHeight = $('.layout-info').outerHeight(true);
-    var fixedSectionsHeight = headerHeight + selectionInfoHeight + layoutInfoHeight;
+    var fixedSectionsHeight = headerHeight + postionsSectionPaddingTop + selectionInfoHeight + layoutInfoHeight;
 
     // Setup iScroll
     document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

@@ -42,17 +42,20 @@ $(document).ready(function() {
     });
 
     // Fit table on resize events
+    var headerHeight = $('#positions-header').outerHeight(true);
+    var postionsSectionPadding = 30;
+    var selectionInfoHeight = $('#selected-position').outerHeight(true);
+    var layoutInfoHeight = $('.layout-info').outerHeight(true);
+    var fudgeFactor = 25; // don't know why this is needed!
     var fixedSectionsHeight =
-        $('#positions-header').height() +
-        $('#selected-position').height() +
-        $('#layout-info').height()
-        + 95;  // fudge-factor
+        headerHeight + postionsSectionPadding + selectionInfoHeight + layoutInfoHeight + fudgeFactor;
+
 
     function fitTable() {
-        var win = $(this);
-        $('#positions-table').setGridWidth(win.width() - 35, true);
-        $('#positions-table').setGridHeight(
-            win.height() - fixedSectionsHeight);
+        var winWidth = $(this).width();
+        var winHeight = $(this).height();
+        $('#positions-table').setGridWidth(winWidth - 35, true);
+        $('#positions-table').setGridHeight(winHeight - fixedSectionsHeight);
     }
     $(window).resize(fitTable);
 

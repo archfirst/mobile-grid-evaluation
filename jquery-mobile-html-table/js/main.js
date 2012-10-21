@@ -49,15 +49,15 @@ $(document).ready(function() {
     });
 
     // Fit table on resize events
-    var fixedSectionsHeight =
-        $('#positions-header').height() +
-        $('#selected-position').height() +
-        $('#layout-info').height()
-        + 70;  // fudge-factor
+    var headerHeight = $('#positions-header').outerHeight(true);
+    var positionSectionPadding = 30;
+    var selectionInfoHeight = $('#selected-position').outerHeight(true);
+    var layoutInfoHeight = $('.layout-info').outerHeight(true);
+    var fixedSectionsHeight = headerHeight + positionSectionPadding + selectionInfoHeight + layoutInfoHeight;
 
     function fitTable() {
         var win = $(this);
-        $('#positions-table-container').height(
+        $('#positions-table-wrapper').height(
             win.height() - fixedSectionsHeight);
     }
     $(window).resize(fitTable);
