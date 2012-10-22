@@ -52,13 +52,31 @@ Results
 -------
 <table>
     <thead>
-        <th>Grid</th>
-        <th>R1</th>
-        <th>R2</th>
-        <th>R3</th>
-        <th>R4</th>
-        <th>R5</th>
-        <th>R6</th>
-        <th>Status</th>
+        <tr>
+            <th>Framework</th>
+            <th>Grid</th>
+            <th>R1</th>
+            <th>R2</th>
+            <th>R3</th>
+            <th>R4</th>
+            <th>R5</th>
+            <th>R6</th>
+            <th>Status</th>
+            <th>Comments</th>
+        </tr>
     </thead>
+    <tbody>
+        <tr>
+            <td>None</td>
+            <td>HTML table (no scrolling)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Done</td>
+            <td>Provides simple markup to conform to the desired look. No attempt to make a scrolling table</td>
+        </tr>
+    </tbody>
 </table>
