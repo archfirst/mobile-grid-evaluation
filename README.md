@@ -6,4 +6,5 @@ on mobile devices. To achieve this goal, we have defined a simple set of require
 be implemented for each grid under evaluation.
 
 The folder structure for this project consits of several sub-folders, each focused on a particular
-approach or grid to implement the requirements.
+approach and/or grid implementation. Please see the [wiki](https://github.com/archfirst/mobile-grid-evaluation/wiki)
+for further details.
