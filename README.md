@@ -9,11 +9,11 @@ page showing stock positions in a portfolio. See below:
 
 Here's a more "official" set of these requirements:
 
-1. The page should have five sections
+1. The page should have five sections:
     * Header: Formatted as "\<Framework\> | \<Grid or Approach\>"
-    * Selected position: Position that was last clicked/tapped
-    * Table header: Fixed, should not scroll
-    * Table body: Positions from the supplied data file (data/positions.js), allows scrolling.
+    * Selected position: Shows the position that was last clicked/tapped
+    * Table header: Shows column headings
+    * Table body: Shows positions from the supplied data file (data/positions.js)
     * Layout info: Shows which responsive layout has been selected and window size in pixels
 2. Look and feel should be as shown above.
 3. Gain and Gain % numbers to be formatted as in examples below:
@@ -28,6 +28,7 @@ columns that can fit in the available width. For the purpose of this exercise, a
     * Narrow (0-499): Drop "Symbol", "Price Paid" and "Gain %" (show 4 columns)
 6. In case of a mobile device, the table should respond to orientation changes and conform to the
 requirements described above.
+7. The table header should be fixed, while the body should be scrollable.
 
 Grids in Scope
 --------------
@@ -45,11 +46,11 @@ and send us a pull request.
 Development
 -----------
 The folder structure for this project consits of several sub-folders, each focused on a particular
-grid or approach. Developers whishing to contribute to this project should fork this repository and
-submit pull requests with implementations.
+grid or approach. Developers wishing to contribute to this project should fork this repository and
+submit pull requests with their implementations.
 
-Results
--------
+Results (Reqirements 1-6)
+-------------------------
 <table>
     <thead>
         <tr>
@@ -61,7 +62,9 @@ Results
             <th>R4</th>
             <th>R5</th>
             <th>R6</th>
+            <th>Owner</th>
             <th>Status</th>
+            <th>Demo</th>
             <th>Comments</th>
         </tr>
     </thead>
@@ -75,7 +78,9 @@ Results
             <td></td>
             <td></td>
             <td></td>
+            <td>archfirst</td>
             <td>Done</td>
+            <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table-no-scrolling" target="_blank">Test</a></td>
             <td>Provides simple markup to conform to the desired look. No attempt to make a scrolling table</td>
         </tr>
     </tbody>
