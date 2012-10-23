@@ -95,7 +95,7 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Y</td>
-            <td>Y</td>
+            <td>Owner?</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
@@ -110,7 +110,7 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Y</td>
-            <td>Y</td>
+            <td>Owner?</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table-iscroll" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
@@ -125,7 +125,7 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Y</td>
-            <td>Y</td>
+            <td>Owner?</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-html-table" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
@@ -140,7 +140,7 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Y</td>
-            <td>Y</td>
+            <td>Owner?</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-html-table-iscroll" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
@@ -155,6 +155,7 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>N</td>
             <td>Y</td>
+            <td>Owner?</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/juqery-mobile-jqgrid" target="_blank">Run</a></td>
             <td>Needs work on look & feel as well as scrolling on mobile devices.</td>
