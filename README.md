@@ -164,24 +164,29 @@ Results (Reqirements 1-6)
 </table>
 
 
-Results (Reqirements 7 - Scroll Table Body)
--------------------------------------------
+Results (Reqirements 7 - Scrolling Table Body)
+----------------------------------------------
 <table>
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Fmwk</th>
-            <th>Grid</th>
-            <th>Win7 Chrome</th>
-            <th>Win7 Firefox</th>
-            <th>Win7 IE9</th>
-            <th>MacOS Safari</th>
+            <th rowspan="2">Id</th>
+            <th rowspan="2">Fmwk</th>
+            <th rowspan="2">Grid</th>
+            <th colspan="3">Win7</th>
+            <th>iOS4</th>
+            <th colspan="2">iOS6</th>
+            <th colspan="3">Android</th>
+        </tr>
+        <tr>
+            <th>Chrome</th>
+            <th>Firefox</th>
+            <th>IE9</th>
+            <th>iPhone4</th>
+            <th>iPhone5</th>
             <th>iPad</th>
-            <th>iPhone4 iOS4</th>
-            <th>iPhone5 iOS5</th>
-            <th>Android Native</th>
-            <th>Android Firefox</th>
-            <th>Android Opera</th>
+            <th>Native</th>
+            <th>Firefox</th>
+            <th>Opera</th>
         </tr>
     </thead>
     <tbody>
@@ -189,7 +194,6 @@ Results (Reqirements 7 - Scroll Table Body)
             <td>1</td>
             <td>None</td>
             <td>HTML table (no scrolling)</td>
-            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -213,13 +217,11 @@ Results (Reqirements 7 - Scroll Table Body)
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
         </tr>
         <tr>
             <td>3</td>
             <td>None</td>
             <td>HTML table - iScroll</td>
-            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -243,7 +245,6 @@ Results (Reqirements 7 - Scroll Table Body)
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
         </tr>
         <tr>
             <td>5</td>
@@ -258,13 +259,11 @@ Results (Reqirements 7 - Scroll Table Body)
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
         </tr>
         <tr>
             <td>6</td>
             <td>jQuery Mobile</td>
             <td>jqGrid</td>
-            <td></td>
             <td></td>
             <td></td>
             <td></td>
