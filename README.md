@@ -194,15 +194,15 @@ Results (Reqirements 7 - Scrolling Table Body)
             <td>1</td>
             <td>None</td>
             <td>HTML table (no scrolling)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
+            <td>N</td>
         </tr>
         <tr>
             <td>2</td>
