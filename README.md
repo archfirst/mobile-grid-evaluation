@@ -32,8 +32,8 @@ requirements described above.
 
 Grids in Scope
 --------------
-1. Standard HTML table with a scrolling body using the css overflow property
-2. Standard HTML table with a scrolling body using [iScroll](http://cubiq.org/iscroll-4)
+1. Standard HTML table - use css overflow for scrolling
+2. Standard HTML table - use [iScroll](http://cubiq.org/iscroll-4) for scrolling
 3. [jqGrid](http://www.trirand.com)
 4. [SlickGrid](https://github.com/mleibman/SlickGrid/wiki)
 5. [DataTables](http://www.datatables.net)
@@ -74,28 +74,28 @@ Results (Reqirements 1-6)
             <td>1</td>
             <td>None</td>
             <td>HTML table (no scrolling)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>Y</td>
             <td>archfirst</td>
             <td>Done</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table-no-scrolling" target="_blank">Run</a></td>
-            <td>Starter example providing desired look and feel. No attempt to make a scrolling table</td>
+            <td>Starter example providing desired look and feel. No attempt to make the table scrollable.</td>
         </tr>
         <tr>
             <td>2</td>
             <td>None</td>
             <td>HTML table</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
@@ -104,13 +104,13 @@ Results (Reqirements 1-6)
             <td>3</td>
             <td>None</td>
             <td>HTML table - iScroll</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table-iscroll" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
@@ -119,13 +119,13 @@ Results (Reqirements 1-6)
             <td>4</td>
             <td>jQuery Mobile</td>
             <td>HTML table</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-html-table" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
@@ -134,13 +134,13 @@ Results (Reqirements 1-6)
             <td>5</td>
             <td>jQuery Mobile</td>
             <td>HTML table - iScroll</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-html-table-iscroll" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
@@ -149,13 +149,12 @@ Results (Reqirements 1-6)
             <td>6</td>
             <td>jQuery Mobile</td>
             <td>jqGrid</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Y</td>
+            <td>N</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>Y</td>
             <td>On hold</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/juqery-mobile-jqgrid" target="_blank">Run</a></td>
             <td>Needs work on look & feel as well as scrolling on mobile devices.</td>
