@@ -156,7 +156,7 @@ Results (Reqirements 1-6)
             <td>N</td>
             <td>Y</td>
             <td>Chetan Rane</td>
-            <td>On hold</td>
+            <td>In Progress</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/juqery-mobile-jqgrid" target="_blank">Run</a></td>
             <td>Needs work on look & feel as well as scrolling on mobile devices.</td>
         </tr>
