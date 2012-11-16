@@ -12,47 +12,15 @@
 		<div id="positionsGrid" ></div>
 		<div class="layout-info"> (Layout Info) </div>
 	</div>
-	
 
-	
 	
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.event.drag-2.0.min.js"></script>
 	<script type="text/javascript" src="js/slick.core.js"></script>
-	<script type="text/javascript" src="js/slick.formatters.js"></script>
 	<script type="text/javascript" src="js/slick.grid.js"></script>
+	
 	<script type="text/javascript" src="../data/positions.js"></script>
-	<script>
-		 var grid;
-		  var columns = [
-			{id: "security", name: "Security", field: "security", width: 200, resizable: false, cssClass: "security"},
-			{id: "symbol", name: "Symbol", field: "symbol"},
-			{id: "quantity", name: "Quantity", field: "quantity"},
-			{id: "last-trade", name: "Last Trade", field: "lastTrade" },
-			{id: "price-paid", name: "Price Paid", field: "pricePaid", cssClass: "positive"},
-			{id: "total-cost", name: "Total Cost", field: "totalCost"},
-			{id: "gain", name: "Gain", field: "gain", cssClass: "orange"},
-			{id: "gain-percent", name: "Gain Percent", field: "gainPercent"}
-		  ];
-
-		  var options = {
-			enableCellNavigation: true,
-			enableColumnReorder: false,
-			autosizeColumns: true,
-			forceFitColumns: true
-		  };
-
-		  $(function () {
-				var data = positions;
-				grid = new Slick.Grid("#positionsGrid", data, columns, options);
-		  });
-		  
-		  $(window).resize(function() {
-			//grid.invalidate();
-			grid.resizeCanvas();
-			console.log("Invalidated");
-		  });
-			
-  	</script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
 </body>
 </html>

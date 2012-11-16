@@ -9,6 +9,7 @@ html, body {
 body{
 	background-color: White;
 	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 14px;
 	height:99%;
 	width: 99%;
 }
@@ -19,13 +20,13 @@ body{
 	margin:0 auto;
 	border: 1px solid #ccc;
 	padding-bottom:5px;
-	overflow:hidden;
 	position: relative;
 	overflow: hidden;
 }
 h1 {
     font-size: 16px;
-    margin: 5px 0;
+    line-height: 21px;
+	margin:0 0 5px 0;
 	background-color: #000;
     color: #FFFFFF;
 	text-align: center;
@@ -46,19 +47,30 @@ h1 {
 	width: 100%;
 }
 
-.ui-state-default.slick-header-column {
-	background-color: gray;
-	color: #fff;
-}
 #positionsGrid{
 	width: 100%;
 	min-height: 1px;
 	position: absolute;
-	top:75px;
+	top:70px;
 	bottom: 30px;
+	
+	font-size: 14px;
+	line-height: 32px;
 	
 }
 
+/* over writes */
+.slick-header-column, .slick-header-column.ui-state-default {
+	height: 32px;
+	line-height: 32px;
+}
+.slick-header-column.ui-state-default {
+	font-weight: bold;
+}
+.ui-state-default.slick-header-column {
+	background-color: gray;
+	color: #fff;
+}
 
 /* Modify */
 .positive {
@@ -70,26 +82,43 @@ h1 {
     color: #EF4623;
     font-weight: bold;
 }
-.security {
-	color: green;
-}
-
-
 
 
 /* -----------------------------------------------------------------------------
  * Narrow Layout (0-499)
  * -------------------------------------------------------------------------- */
 @media screen and (max-width: 499px) {
-    .layout-info:before { content: "Narrow Layout (0-499)"; }
+    body {
+		font-size: 16px;
+	}
+	
+	#positionsGrid{
+		font-size: 16px;
+		line-height: 44px;
+	}
+	.slick-header-column, .slick-header-column.ui-state-default {
+		height: 44px;
+		line-height: 44px;
+	}
+	.layout-info:before { content: "Narrow Layout (0-499)"; }
 }
 
 /* -----------------------------------------------------------------------------
  *  Medium Layout (500-899)
  * -------------------------------------------------------------------------- */
 @media screen and (min-width: 500px) and (max-width: 899px) {
-    .layout-info:before { content: "Medium Layout (500-899)"; }
-
+	body {
+		font-size: 16px;
+	}
+	#positionsGrid{
+		font-size: 16px;
+		line-height: 44px;
+	}
+	.slick-header-column, .slick-header-column.ui-state-default {
+		height: 44px;
+		line-height: 44px;
+	}
+    .layout-info:before { content: "Medium Layout (500-899)"; }	
 }
 
 /* -----------------------------------------------------------------------------
