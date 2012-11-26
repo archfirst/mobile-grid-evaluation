@@ -35,7 +35,7 @@ space between the fixed sections above and below it.
 columns that can fit in the available width. For the purpose of this exercise, assume three layouts:
     * Wide (900+): Shows all nine columns, row height = 32px, font size = 14px
     * Medium (500-899): Drops "Total Cost" and "Gain" (showing 7 columns), row height = 44px, font size = 16px 
-    * Narrow (0-499): Drops "Symbol", "Price Paid" and "Gain %" (showing only 4 columns), row height = 44px, font size = 16px
+    * Narrow (0-499): Drops "Security", "Price Paid" and "Gain %" (showing only 4 columns), row height = 44px, font size = 16px
 6. In case of a mobile device, the table should respond to orientation changes, conforming to the
 requirements described above.
 7. The table header should be fixed, while the body should be scrollable.
@@ -163,12 +163,12 @@ Results (Reqirements 1-6)
             <td>N</td>
             <td>N</td>
             <td>Y</td>
-            <td>N</td>
+            <td>Y</td>
             <td>Y</td>
             <td>Chetan Rane</td>
             <td>In Progress</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-jqgrid" target="_blank">Run</a></td>
-            <td>Needs work on look & feel as well as scrolling on mobile devices.</td>
+            <td>R2: Column alignments are not correct, R3: Negative gain and gain % are not formatted correctly</td>
         </tr>
         <tr>
             <td>7</td>
@@ -334,15 +334,15 @@ Results (Reqirements 7 - Scrolling Table Body)
             <td>6</td>
             <td>jQuery Mobile</td>
             <td>jqGrid</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>?</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>Y</td>
+            <td>N</td>
         </tr>
         <tr>
             <td>7</td>

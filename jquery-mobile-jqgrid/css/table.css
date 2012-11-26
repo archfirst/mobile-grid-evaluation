@@ -1,7 +1,7 @@
 .ui-jqgrid-htable thead tr{
-	background-color:gray;	
-	color: #FFFFFF;
-	height:30px
+    background-color:gray;    
+    color: #FFFFFF;
+    height:30px
 }
 
 .positive {
@@ -18,7 +18,7 @@
 #positions-table_lastTrade,#positions-table_marketValue,
 #positions-table_pricePaid,#positions-table_totalCost,
 #positions-table_gain,#positions-table_gainPercent{
-	text-align:right;
+    text-align:right;
 }
 
 /* -----------------------------------------------------------------------------
