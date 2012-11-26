@@ -4,32 +4,34 @@
     <meta charset="utf-8">
     <title>jQuery Mobile | jqGrid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="css/ui.jqgrid.css"/>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/table.css">
 </head>
 
 <body>
-    <section id="positions" data-role="page">
-
-        <header id="positions-header" data-role="header">
+	
+    <div id="positions" data-role="page">
+    	<!-- Section 1 : Header -->
+     	<div id="positions-header" data-role="header">
             <h1>jQuery Mobile | jqGrid</h1>
-        </header>
+        </div>	
 
-        <section id="positions-section" data-role="content">
-            <div id="selected-position"></div>
+        <div id="positions-section" data-role="content" class="content-primary"> 
+        	 <!-- Section 2 : Selected Position -->
+        	<div id="selected-position" data-role="info"></div>
+        	<!-- Section 3 & 4 : Table Header and Table Body-->         
             <table id="positions-table"></table>
+            <!-- Section 5 : Display Window Size -->
             <div class="layout-info">, Window Size: <span class="window-size"></span></div>
-        </section>
+        </div>
 
-    </section>
+    </div>
 
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script src="js/i18n/grid.locale-en.js"></script>
-    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="js/jquery.jqGrid.js"></script>
     <script src="../data/positions.js"></script>
     <script src="js/main.js"></script>
 </body>
