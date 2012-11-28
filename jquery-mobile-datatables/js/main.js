@@ -1,8 +1,13 @@
-/**
- * Uses jQuery and dataTables.js to create a responsive design for tabular data.
- *
- * @author Andrew Rota
- */
+/*!
+* main.js
+* Uses jQuery and dataTables.js to create a responsive design for tabular data.
+* 
+* @project   Mobile Grid Evaluation
+* @date      2012-11-28
+* @author    Andrew Rota, Sapient <arota@sapient.com>
+*
+*/
+
 $(document).ready(function () {
 
     /**
@@ -23,10 +28,10 @@ $(document).ready(function () {
         if ($(this).width() <= 899 && $(this).width() > 499) {
             $(".security").removeClass("hide");
             $.each(columns, function(index, priority) {
-                if (priority == 2) {
+                if (priority === 2) {
                     table.fnSetColumnVis(index, true, true);
                 }
-                else if(priority == 3) {
+                else if(priority === 3) {
                     table.fnSetColumnVis(index, false, true);
                 }
             });
@@ -36,7 +41,7 @@ $(document).ready(function () {
         } else if ($(this).width() <= 499 && $(this).width() > 0) {
             $(".security").addClass("hide");
             $.each(columns, function(index, priority) {
-                if (priority == 2 || priority == 3) {
+                if (priority === 2 || priority === 3) {
                     table.fnSetColumnVis(index, false, true);
                 }
             });
@@ -45,7 +50,7 @@ $(document).ready(function () {
             $("#positions-table").removeClass("medium");
         } else {
             $.each(columns, function(index, priority) {
-                if (priority == 2 || priority == 3) {
+                if (priority === 2 || priority === 3) {
                     table.fnSetColumnVis(index, true, true);
                 }
             });
@@ -76,6 +81,7 @@ $(document).ready(function () {
      * @return {string} The descriptive string (either positive, negative, or zero)
      */
     function getPositiveOrNegativeOrZero(n) {
+        "use strict";
         if (n > 0) {
             return "positive";
         } else if (n < 0) {
@@ -194,7 +200,7 @@ $(document).ready(function () {
     });
     
     bindSelectEvents(); //bind rows to click/touch events on page load
-    table = $('#positions-table').dataTable(settings); //configure table on page load
+    var table = $('#positions-table').dataTable(settings); //configure table on page load
     configureForWidth(table); //show/hide columns based on width on page load
     formatNegativeNumbers(); //format negative numbers on page load
     displayWindowSize(); //display window size on page load
