@@ -1,0 +1,153 @@
+/* -----------------------------------------------------------------------------
+ * Positions Table
+ * -------------------------------------------------------------------------- */
+
+#positions-table, .dataTable {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#positions-table, #positions-table tbody {
+    background: #ffffff;
+}
+
+#positions-table .ui-body-c {
+    background: white;
+}
+
+#positions-table .positive, #positions-table .zero {
+    color: #F79F20;
+    font-weight: bold;
+}
+
+#positions-table .negative {
+    color: #EF4623;
+    font-weight: bold;
+}
+
+#selected-position {
+    background-color: #E0E0E0;
+    font: normal normal 20px/35px Arial;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+#positions-table .layout-info {
+    font-size: 10px;
+}
+
+#positions-table th, #positions-table td {
+}
+
+#positions-table tr, #positions-table .sorting_1 {
+    background: #ffffff;
+}
+
+#positions-table td {
+    border: 0;
+}
+
+#positions-table td, .dataTable th {
+    text-align: right;
+}
+
+#positions-table td.security, .dataTable th.security {
+    text-align: left;
+}
+
+#positions-table td.symbol, .dataTable th.symbol {
+    text-align: center;
+}
+
+#positions-table td {
+    border-bottom: 1px solid #B2B2B2;
+}
+
+#positions-table {
+    width: 100% !Important;
+}
+
+.wide td {
+    font-size: 14px;
+    height: 32px;
+}
+
+.medium td {
+    font-size: 16px;
+    height: 44px;
+}
+
+.narrow td {
+    font-size: 16px;
+    height: 44px;
+}
+
+.dataTable thead tr {
+    background: #808080;
+    color: #ffffff;
+    height: 28px;
+}
+
+.dataTable th, .dataTable td {
+    padding: 0 5px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Ensure override of dataTables default styles
+ * -------------------------------------------------------------------------- */
+
+.sorting, .sorting_asc, .sorting_desc {
+    background: none;
+}
+
+.ui-body-c, .ui-overlay-c {
+    text-shadow: none;
+}
+
+/* -----------------------------------------------------------------------------
+ * Narrow Layout (0-499)
+ * -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 499px) {
+    .layout-info:before {
+        content: "Narrow Layout (0-499)";
+    }
+
+    #positions-table td, .dataTable th {
+        font-size: 16px;
+        height: 44px;
+    }
+
+}
+
+/* -----------------------------------------------------------------------------
+ *  Medium Layout (500-899)
+ * -------------------------------------------------------------------------- */
+
+@media screen and (min-width: 500px) and (max-width: 899px) {
+    .layout-info:before {
+        content: "Medium Layout (500-899)";
+    }
+
+    #positions-table td, .dataTable th {
+        font-size: 16px;
+        height: 44px;
+    }
+
+}
+
+/* -----------------------------------------------------------------------------
+ *  Wide Layout (900+)
+ * -------------------------------------------------------------------------- */
+
+@media screen and (min-width: 900px) {
+    .layout-info:before {
+        content: "Wide Layout (900+)";
+    }
+
+    #positions-table td, .dataTable th {
+        font-size: 14px;
+        height: 32px;
+    }
+
+}

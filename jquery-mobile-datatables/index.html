@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Mobile | DataTables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <section id="positions" data-role="page">
+
+        <header id="positions-header" data-role="header">
+            <h1>jQuery | DataTables</h1>
+        </header>
+
+        <section id="positions-section" data-role="content">
+            <div id="selected-position"></div>
+            <table id="positions-table"></table>
+            <div class="layout-info">, Window Size: <span class="window-size"></span></div>
+        </section>
+
+    </section>
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="js/jquery.format-1.2.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="../data/positions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
