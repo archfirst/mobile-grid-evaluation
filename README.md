@@ -182,7 +182,7 @@ Results (Reqirements 1-6)
             <td></td>
             <td>Sravan Rekandar</td>
             <td>In Progress</td>
-            <td>http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-slickgrid</td>
+            <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-slickgrid" target="_blank">Run</a></td>
             <td></td>
         </tr>
         <tr>
@@ -197,7 +197,7 @@ Results (Reqirements 1-6)
             <td></td>
             <td>Andrew Rota</td>
             <td>In Progress</td>
-            <td>http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-datatables</td>
+            <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-datatables" target="_blank">Run</a></td>
             <td></td>
         </tr>
         <tr>
