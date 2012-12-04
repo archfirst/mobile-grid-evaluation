@@ -11,20 +11,22 @@
 $(document).ready(function () {
 
     /**
-     * Currency Sorting Plug-in for DataTables
+     * Formatted Numbers Sorting Plug-in for DataTables
      *
      * @author Allan Jardine
-     * @source http://www.datatables.net/plug-ins/sorting
+     * @source http://www.datatables.net/plug-ins/sorting#formatted_numbers
      */
     jQuery.extend( jQuery.fn.dataTableExt.oSort, {
-        "currency-pre": function ( a ) {
-            a = (a==="-") ? 0 : a.replace( /[^\d\-\.]/g, "" );
-            return parseFloat( a );
+        "formatted-num-pre": function ( a ) {
+        a = (a==="-") ? 0 : a.replace( /[^\d\-\.]/g, "" );
+        return parseFloat( a );
         },
-        "currency-asc": function ( a, b ) {
+     
+        "formatted-num-asc": function ( a, b ) {
             return a - b;
         },
-        "currency-desc": function ( a, b ) {
+     
+        "formatted-num-desc": function ( a, b ) {
             return b - a;
         }
     } );
@@ -151,6 +153,7 @@ $(document).ready(function () {
                     return ($.format.number(quantity, '#,##0'));
                 },
                 "sTitle": "Quantity",
+                "sType": "formatted-num",
                 "sClass": "quantity priority1"
             }, 
             {
@@ -160,7 +163,7 @@ $(document).ready(function () {
                     return "$" + ($.format.number(lastTrade, '#,##0.00'));
                 },
                 "sTitle": "Last Trade",
-                "sType": "currency",
+                "sType": "formatted-num",
                 "sClass": "last-trade priority1"
             }, 
             {
@@ -171,7 +174,7 @@ $(document).ready(function () {
                 "mRender": function(data, type, full) {
                     return "$" + ($.format.number(data, '#,##0.00'));
                 },
-                "sType": "currency",
+                "sType": "formatted-num",
                 "sTitle": "Market Value",
                 "sClass": "market-value priority1"
             }, {
@@ -182,7 +185,7 @@ $(document).ready(function () {
                 "mRender": function(data, type, full) {
                     return "$" + ($.format.number(data, '#,##0.00'));
                 },
-                "sType": "currency",
+                "sType": "formatted-num",
                 "sTitle": "Price Paid",
                 "sClass": "price-paid priority2"
             }, 
@@ -194,7 +197,7 @@ $(document).ready(function () {
                 "mRender": function (data, type, full) {
                     return "$" + ($.format.number(data, '#,##0.00'));
                 },
-                "sType": "currency",
+                "sType": "formatted-num",
                 "sTitle": "Total Cost",
                 "sClass": "total-cost priority3"
             }, 
@@ -207,6 +210,7 @@ $(document).ready(function () {
                     return "<span class='" + getPositiveOrNegativeOrZero(data) + "'>$" + $.format.number(data, '#,##0.00');
                 },
                 "sTitle": "Gain",
+                "sType": "formatted-num",
                 "sClass": "gain priority3"
             }, 
             {
@@ -218,6 +222,7 @@ $(document).ready(function () {
                     return ("<span class='" + getPositiveOrNegativeOrZero(data) + "'>" + $.format.number(data, '#,##0.00')) + "%";
                 },
                 "sTitle": "Gain %",
+                "sType": "formatted-num",
                 "sClass": "gain-percentage priority2"
             }
         ],
