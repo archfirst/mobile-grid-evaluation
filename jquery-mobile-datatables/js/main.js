@@ -4,7 +4,7 @@
 * 
 * @project   Mobile Grid Evaluation
 * @date      2012-11-28
-* @author    Andrew Rota, Sapient <arota@sapient.com>
+* @author    Andrew Rota
 *
 */
 
