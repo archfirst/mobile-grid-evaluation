@@ -203,5 +203,4 @@ $(document).ready(function () {
     configureForWidth(table, [1,1,1,1,1,2,3,3,2]);  //show/hide columns based on width on page load
     formatNegativeNumbers(); //format negative numbers on page load
     displayWindowSize(); //display window size on page load
-    $(window).trigger('resize');
 });
