@@ -6,4 +6,3 @@
     - X-scroll bar on window when sized to 499-577 (Firefox 16)
     - X-scroll bar on window when sized to 499-579 (Safari 5.1)
     - X scroll bar on window when sized to 499-581 (Internet Explorer 9)
-- Sorting doesn't work on formatted numbers
