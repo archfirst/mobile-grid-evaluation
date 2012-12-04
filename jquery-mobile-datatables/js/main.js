@@ -16,7 +16,7 @@ $(document).ready(function () {
      * @return {number} The calculated height for the table
      */
     function getHeight() {
-        return $(this).height() - 175;
+        return $(this).height() - 190;
     }
 
     /**
