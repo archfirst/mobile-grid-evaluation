@@ -200,7 +200,7 @@ $(document).ready(function () {
     });
     bindSelectEvents(); //bind rows to click/touch events on page load
     var table = $('#positions-table').dataTable(settings); //configure table on page load
-    configureForWidth(table, [1,1,1,1,1,2,3,3,2]);  //show/hide columns based on width on page load
+    configureForWidth(table, [1,1,1,1,1,2,3,3,2]);  //prioritize columns to hide based on window width on page load
     formatNegativeNumbers(); //format negative numbers on page load
     displayWindowSize(); //display window size on page load
 });
