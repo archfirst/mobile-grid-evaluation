@@ -11,6 +11,25 @@
 $(document).ready(function () {
 
     /**
+     * Currency Sorting Plug-in for DataTables
+     *
+     * @author Allan Jardine
+     * @source http://www.datatables.net/plug-ins/sorting
+     */
+    jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+        "currency-pre": function ( a ) {
+            a = (a==="-") ? 0 : a.replace( /[^\d\-\.]/g, "" );
+            return parseFloat( a );
+        },
+        "currency-asc": function ( a, b ) {
+            return a - b;
+        },
+        "currency-desc": function ( a, b ) {
+            return b - a;
+        }
+    } );
+
+    /**
      * Returns a height for the table
      *
      * @return {number} The calculated height for the table
@@ -135,40 +154,57 @@ $(document).ready(function () {
                 "sClass": "quantity priority1"
             }, 
             {
-                "mData": function (source, type, val) {
-                    var lastTrade = source.lastTrade;
+                "mData": "lastTrade",
+                "mRender": function (data, type, full) {
+                    var lastTrade = data;
                     return "$" + ($.format.number(lastTrade, '#,##0.00'));
                 },
                 "sTitle": "Last Trade",
+                "sType": "currency",
                 "sClass": "last-trade priority1"
             }, 
             {
                 "mData": function (source, type, val) {
                     var marketValue = source.lastTrade * source.quantity;
-                    return "$" + ($.format.number(marketValue, '#,##0.00'));
+                    return marketValue;
                 },
+                "mRender": function(data, type, full) {
+                    return "$" + ($.format.number(data, '#,##0.00'));
+                },
+                "sType": "currency",
                 "sTitle": "Market Value",
                 "sClass": "market-value priority1"
             }, {
                 "mData": function (source, type, val) {
                     var pricePaid = source.pricePaid;
-                    return "$" + ($.format.number(pricePaid, '#,##0.00'));
+                    return pricePaid;
                 },
+                "mRender": function(data, type, full) {
+                    return "$" + ($.format.number(data, '#,##0.00'));
+                },
+                "sType": "currency",
                 "sTitle": "Price Paid",
                 "sClass": "price-paid priority2"
             }, 
             {
                 "mData": function (source, type, val) {
                     var totalCost = source.pricePaid * source.quantity;
-                    return "$" + ($.format.number(totalCost, '#,##0.00'));
+                    return totalCost;
                 },
+                "mRender": function (data, type, full) {
+                    return "$" + ($.format.number(data, '#,##0.00'));
+                },
+                "sType": "currency",
                 "sTitle": "Total Cost",
                 "sClass": "total-cost priority3"
             }, 
             {
                 "mData": function (source, type, val) {
                     var gain = (source.lastTrade * source.quantity) - (source.pricePaid * source.quantity);
-                    return "<span class='" + getPositiveOrNegativeOrZero(gain) + "'>$" + $.format.number(gain, '#,##0.00');
+                    return gain;
+                },
+                "mRender": function(data, type, full) {
+                    return "<span class='" + getPositiveOrNegativeOrZero(data) + "'>$" + $.format.number(data, '#,##0.00');
                 },
                 "sTitle": "Gain",
                 "sClass": "gain priority3"
@@ -176,7 +212,10 @@ $(document).ready(function () {
             {
                 "mData": function (source, type, val) {
                     var gainPercentage = (((source.lastTrade * source.quantity) - (source.pricePaid * source.quantity)) / (source.pricePaid * source.quantity)) * 100;
-                    return ("<span class='" + getPositiveOrNegativeOrZero(gainPercentage) + "'>" + $.format.number(gainPercentage, '#,##0.00')) + "%";
+                    return gainPercentage;
+                },
+                "mRender": function(data, type, full) {
+                    return ("<span class='" + getPositiveOrNegativeOrZero(data) + "'>" + $.format.number(data, '#,##0.00')) + "%";
                 },
                 "sTitle": "Gain %",
                 "sClass": "gain-percentage priority2"
