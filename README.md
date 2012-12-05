@@ -93,7 +93,7 @@ Results (Reqirements 1-6)
             <td>Naresh Bhatia</td>
             <td>Done</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table-no-scrolling" target="_blank">Run</a></td>
-            <td>Starter example providing desired look and feel. No attempt to make the table scrollable.</td>
+            <td></td>
         </tr>
         <tr>
             <td>2</td>
@@ -106,9 +106,9 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Naresh Bhatia</td>
-            <td>In Progress</td>
+            <td>Done</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table" target="_blank">Run</a></td>
-            <td>Needs work to freeze table header</td>
+            <td></td>
         </tr>
         <tr>
             <td>3</td>
@@ -121,9 +121,9 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Naresh Bhatia</td>
-            <td>In Progress</td>
+            <td>Done</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table-iscroll" target="_blank">Run</a></td>
-            <td>Needs work to freeze table header</td>
+            <td></td>
         </tr>
         <tr>
             <td>4</td>
@@ -136,9 +136,9 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Naresh Bhatia</td>
-            <td>In Progress</td>
+            <td>Done</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-html-table" target="_blank">Run</a></td>
-            <td>Needs work to freeze table header</td>
+            <td></td>
         </tr>
         <tr>
             <td>5</td>
@@ -151,9 +151,9 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Naresh Bhatia</td>
-            <td>In Progress</td>
+            <td>Done</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-html-table-iscroll" target="_blank">Run</a></td>
-            <td>Needs work to freeze table header</td>
+            <td></td>
         </tr>
         <tr>
             <td>6</td>
