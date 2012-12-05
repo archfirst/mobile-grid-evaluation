@@ -47,7 +47,7 @@ $(document).ready(function () {
      */
     function configureForWidth(table, columns) {
         if ($(this).width() <= 899 && $(this).width() > 499) {
-            $(".security").removeClass("hide");
+            $(".security").addClass("hide");
             $.each(columns, function(index, priority) {
                 if (priority === 2) {
                     table.fnSetColumnVis(index, true, true);

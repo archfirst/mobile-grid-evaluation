@@ -1,8 +1,3 @@
 *******Known Issues*******
 - Columns not properly aligned in narrow view (Safari 5.1)
 - Column alignment off when resizing from narrow to wide view (Safari 5.1)
-- Horizontal scroll bar appearing in medium layout
-    - X-scroll bar on window when sized to 499-562 (Chrome 23)
-    - X-scroll bar on window when sized to 499-577 (Firefox 16)
-    - X-scroll bar on window when sized to 499-579 (Safari 5.1)
-    - X scroll bar on window when sized to 499-581 (Internet Explorer 9)
