@@ -20,24 +20,26 @@
             <div id="selected-position"></div>
 
             <div id="positions-table-wrapper">
-                <div id="positions-table-scroller">
-                    <table id="positions-table">
-                        <thead>
-                            <tr>
-                                <th class="priority2 security">Security</th>
-                                <th class="priority1 symbol">Symbol</th>
-                                <th class="priority1 quantity">Quantity</th>
-                                <th class="priority1 last-trade">Last Trade</th>
-                                <th class="priority1 market-value">Market Value</th>
-                                <th class="priority2 price-paid">Price Paid</th>
-                                <th class="priority3 total-cost">Total Cost</th>
-                                <th class="priority3 gain">Gain</th>
-                                <th class="priority2 gain-percent">Gain %</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
+                <div id="positions-table-header-wrapper">
+                    <table id="positions-table-header">
+                        <tr>
+                            <th class="priority3 align-left security">Security</th>
+                            <th class="priority1 align-center symbol">Symbol</th>
+                            <th class="priority1 align-right quantity">Quantity</th>
+                            <th class="priority1 align-right last-trade">Last Trade</th>
+                            <th class="priority1 align-right market-value">Market Value</th>
+                            <th class="priority2 align-right price-paid">Price Paid</th>
+                            <th class="priority3 align-right total-cost">Total Cost</th>
+                            <th class="priority3 align-right gain">Gain</th>
+                            <th class="priority2 align-right gain-percent">Gain %</th>
+                        </tr>
                     </table>
+                </div>
+                <div id="positions-table-body-wrapper">
+                    <div id="positions-table-body-scroller">
+                        <table id="positions-table-body">
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -46,17 +48,17 @@
 
     </section>
 
-    <script id="positionTemplate" type="text/x-mustache-tmpl">
+    <script id="position-template" type="text/x-mustache-tmpl">
     <tr>
-        <td class="priority2 security">{{security}}}</td>
-        <td class="priority1 symbol">{{symbol}}</td>
-        <td class="priority1 quantity">{{quantity}}</td>
-        <td class="priority1 last-trade">{{formatMoney lastTrade}}</td>
-        <td class="priority1 market-value">{{formatMoney marketValue}}</td>
-        <td class="priority2 price-paid">{{formatMoney pricePaid}}</td>
-        <td class="priority3 total-cost">{{formatMoney totalCost}}</td>
-        <td class="priority3 gain {{getSign gain}}">{{formatMoney gain}}</td>
-        <td class="priority2 gain-percent {{getSign gainPercent}}">{{formatPercent gainPercent}}</td>
+        <td class="priority3 align-left security">{{security}}}</td>
+        <td class="priority1 align-center symbol">{{symbol}}</td>
+        <td class="priority1 align-right quantity">{{quantity}}</td>
+        <td class="priority1 align-right last-trade">{{formatMoney lastTrade}}</td>
+        <td class="priority1 align-right market-value">{{formatMoney marketValue}}</td>
+        <td class="priority2 align-right price-paid">{{formatMoney pricePaid}}</td>
+        <td class="priority3 align-right total-cost">{{formatMoney totalCost}}</td>
+        <td class="priority3 align-right gain {{getSign gain}}">{{formatMoney gain}}</td>
+        <td class="priority2 align-right gain-percent {{getSign gainPercent}}">{{formatPercent gainPercent}}</td>
     </tr>
     </script>
 

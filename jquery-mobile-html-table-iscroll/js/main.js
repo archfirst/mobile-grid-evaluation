@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
     // Compile handlebar template
-    var src = $('#positionTemplate').html();
+    var src = $('#position-template').html();
     var template = Handlebars.compile(src);
 
     // Compute position values
@@ -30,7 +30,7 @@ $(document).ready(function() {
     });
 
     // Render table
-    var table = $('#positions-table tbody');
+    var table = $('#positions-table-body');
     $.each(positions, function(index, position) {
         table.append(template(position));
     });
@@ -43,7 +43,7 @@ $(document).ready(function() {
     $(window).resize(displayWindowSize);
 
     // Show selection on click events
-    $('#positions-table tbody tr').click(function() {
+    $('#positions-table-body tr').click(function() {
         var security = $(this).find('.security').html();
         $('#selected-position').html(security);
     });
@@ -52,21 +52,28 @@ $(document).ready(function() {
     var headerHeight = $('#positions-header').outerHeight(true);
     var postionsSectionPaddingTop = 15;
     var selectionInfoHeight = $('#selected-position').outerHeight(true);
+    var tableHeaderHeight = $('#positions-table-header-wrapper').outerHeight(true);
     var layoutInfoHeight = $('.layout-info').outerHeight(true);
-    var fixedSectionsHeight = headerHeight + postionsSectionPaddingTop + selectionInfoHeight + layoutInfoHeight;
+    var fixedSectionsHeight =
+        headerHeight + postionsSectionPaddingTop + selectionInfoHeight + tableHeaderHeight + layoutInfoHeight;
 
     // Setup iScroll
     document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-    var myScroll = new iScroll('positions-table-wrapper');
+    var myScroll = new iScroll('positions-table-body-wrapper');
 
     // Fit table when window resizes
     function fitTable() {
         var winHeight = $(this).height();
-        $('#positions-table-wrapper').height(winHeight - fixedSectionsHeight);
+        $('#positions-table-body-wrapper').height(winHeight - fixedSectionsHeight);
         setTimeout(function() {
             myScroll.refresh();
         }, 0);
-    };
+        var headerColumns = $('#positions-table-header tr th');
+        var bodyColumns = $('#positions-table-body tr:first td');
+        for (var i = 0; i < headerColumns.length; i++) {
+            $(headerColumns[i]).width($(bodyColumns[i]).width());
+        }
+    }
     $(window).resize(fitTable);
 
     // Perform initial setup

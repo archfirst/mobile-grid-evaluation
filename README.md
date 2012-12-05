@@ -7,13 +7,13 @@ display positions in a stock portfolio, as shown below:
 
 ![Mobile Grid Requirements](https://raw.github.com/archfirst/mobile-grid-evaluation/master/docs/wide-layout.png)
 
-When the device width is less that 900 pixels, the "Total Cost" and "Gain" columns are dropped.
+When the device width is less that 900 pixels, the "Security", "Total Cost" and "Gain" columns are dropped.
 Also the height of the table rows is increased to 44 pixels to allow for a bigger tap target.
 In addition, the table font-size is increase to 16px for better readability.
 
 ![Mobile Grid Requirements](https://raw.github.com/archfirst/mobile-grid-evaluation/master/docs/medium-layout.png)
 
-When the device width is less that 500 pixels, the "Security", "Price Paid" and "Gain %" columns are dropped:
+When the device width is less that 500 pixels, the "Price Paid" and "Gain %" columns are dropped:
 
 ![Mobile Grid Requirements](https://raw.github.com/archfirst/mobile-grid-evaluation/master/docs/narrow-layout.png)
 
@@ -34,8 +34,8 @@ space between the fixed sections above and below it.
 5. The table should adapt to the width of the device/browser window, showing the most important
 columns that can fit in the available width. For the purpose of this exercise, assume three layouts:
     * Wide (900+): Shows all nine columns, row height = 32px, font size = 14px
-    * Medium (500-899): Drops "Total Cost" and "Gain" (showing 7 columns), row height = 44px, font size = 16px 
-    * Narrow (0-499): Drops "Security", "Price Paid" and "Gain %" (showing only 4 columns), row height = 44px, font size = 16px
+    * Medium (500-899): Drops "Security", "Total Cost" and "Gain" (showing 6 columns), row height = 44px, font size = 16px 
+    * Narrow (0-499): Drops "Price Paid" and "Gain %" (showing only 4 columns), row height = 44px, font size = 16px
 6. In case of a mobile device, the table should respond to orientation changes, conforming to the
 requirements described above.
 7. The table header should be fixed, while the body should be scrollable.
@@ -90,7 +90,7 @@ Results (Reqirements 1-6)
             <td>N</td>
             <td>Y</td>
             <td>Y</td>
-            <td>archfirst</td>
+            <td>Naresh Bhatia</td>
             <td>Done</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table-no-scrolling" target="_blank">Run</a></td>
             <td>Starter example providing desired look and feel. No attempt to make the table scrollable.</td>
@@ -105,8 +105,8 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Y</td>
-            <td>???</td>
-            <td>On hold</td>
+            <td>Naresh Bhatia</td>
+            <td>In Progress</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
         </tr>
@@ -120,8 +120,8 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Y</td>
-            <td>???</td>
-            <td>On hold</td>
+            <td>Naresh Bhatia</td>
+            <td>In Progress</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/no-framework-html-table-iscroll" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
         </tr>
@@ -135,8 +135,8 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Y</td>
-            <td>???</td>
-            <td>On hold</td>
+            <td>Naresh Bhatia</td>
+            <td>In Progress</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-html-table" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
         </tr>
@@ -150,8 +150,8 @@ Results (Reqirements 1-6)
             <td>Y</td>
             <td>Y</td>
             <td>Y</td>
-            <td>???</td>
-            <td>On hold</td>
+            <td>Naresh Bhatia</td>
+            <td>In Progress</td>
             <td><a href="http://archfirst.org/examples/mobile-grid-evaluation/jquery-mobile-html-table-iscroll" target="_blank">Run</a></td>
             <td>Needs work to freeze table header</td>
         </tr>
