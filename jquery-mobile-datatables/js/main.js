@@ -9,7 +9,8 @@
 */
 
 $(document).ready(function () {
-
+    var table;
+    
     /**
      * Formatted Numbers Sorting Plug-in for DataTables
      *
@@ -235,16 +236,18 @@ $(document).ready(function () {
         "bAutoWidth": true //toggle column width is automatically set
     };
     
-    $(window).resize(function () {
+    function configureTable(settings) {
         displayWindowSize();
         settings.sScrollY = getHeight(); //set scroll settings to new height
         table = $('#positions-table').dataTable(settings); //replace table with new settings
         configureForWidth(table, [3,1,1,1,1,2,3,3,2]); //prioritize columns to hide based on window width
         formatNegativeNumbers(); //reformat negative numbers
+    }
+    
+    $(window).resize(function () {
+        configureTable(settings);
     });
+    
     bindSelectEvents(); //bind rows to click/touch events on page load
-    var table = $('#positions-table').dataTable(settings); //configure table on page load
-    configureForWidth(table, [3,1,1,1,1,2,3,3,2]);  //prioritize columns to hide based on window width on page load
-    formatNegativeNumbers(); //format negative numbers on page load
-    displayWindowSize(); //display window size on page load
+    configureTable(settings);
 });
