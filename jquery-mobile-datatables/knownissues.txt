@@ -1,3 +1,1 @@
 *******Known Issues*******
-- Columns not properly aligned in narrow view (Safari 5.1)
-- Column alignment off when resizing from narrow to wide view (Safari 5.1)

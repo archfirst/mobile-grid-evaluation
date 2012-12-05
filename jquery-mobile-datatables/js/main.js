@@ -47,7 +47,6 @@ $(document).ready(function () {
      */
     function configureForWidth(table, columns) {
         if ($(this).width() <= 899 && $(this).width() > 499) {
-            $(".security").addClass("hide");
             $.each(columns, function(index, priority) {
                 if (priority === 2) {
                     table.fnSetColumnVis(index, true, true);
@@ -60,7 +59,6 @@ $(document).ready(function () {
             $("#positions-table").removeClass("wide");
             $("#positions-table").removeClass("narrow");
         } else if ($(this).width() <= 499 && $(this).width() > 0) {
-            $(".security").addClass("hide");
             $.each(columns, function(index, priority) {
                 if (priority === 2 || priority === 3) {
                     table.fnSetColumnVis(index, false, true);
@@ -75,7 +73,6 @@ $(document).ready(function () {
                     table.fnSetColumnVis(index, true, true);
                 }
             });
-            $(".security").removeClass("hide");
             $("#positions-table").addClass("wide");
             $("#positions-table").removeClass("medium");
             $("#positions-table").removeClass("narrow");
@@ -88,10 +85,10 @@ $(document).ready(function () {
      */
     function bindSelectEvents() {
         $("#positions-table").on("click", "tr", function (e) {
-            $('#selected-position').html($(e.target).parent().find(".security").html());
+            $('#selected-position').html($(e.target).parent().attr("data-security-name"));
         });
         $("#positions-table").on("click", "tr span", function (e) {
-            $('#selected-position').html($(e.target).parent().parent().find(".security").html());
+            $('#selected-position').html($(e.target).parent().parent().attr("data-security-name"));
         });
     }
 
@@ -136,6 +133,9 @@ $(document).ready(function () {
     var settings = {
         "aaData": positions, //source of data
         "aaSorting": [[1, "asc"]], //default sort
+        "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+            $(nRow).attr('data-security-name', aData.security);
+        }, //set security name as an attribute of each row (for click/touch event)
         "aoColumns": [
             {
                 "mData": "security",
@@ -239,12 +239,12 @@ $(document).ready(function () {
         displayWindowSize();
         settings.sScrollY = getHeight(); //set scroll settings to new height
         table = $('#positions-table').dataTable(settings); //replace table with new settings
-        configureForWidth(table, [1,1,1,1,1,2,3,3,2]); //prioritize columns to hide based on window width
-        formatNegativeNumbers(); //reformat negative numbers on page load
+        configureForWidth(table, [3,1,1,1,1,2,3,3,2]); //prioritize columns to hide based on window width
+        formatNegativeNumbers(); //reformat negative numbers
     });
     bindSelectEvents(); //bind rows to click/touch events on page load
     var table = $('#positions-table').dataTable(settings); //configure table on page load
-    configureForWidth(table, [1,1,1,1,1,2,3,3,2]);  //prioritize columns to hide based on window width on page load
+    configureForWidth(table, [3,1,1,1,1,2,3,3,2]);  //prioritize columns to hide based on window width on page load
     formatNegativeNumbers(); //format negative numbers on page load
     displayWindowSize(); //display window size on page load
 });
