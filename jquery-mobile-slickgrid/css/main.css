@@ -48,7 +48,7 @@ h1 {
 	background-color: #ff0;
 	line-height: 30px;
 	height: 30px;
-	over-flow: hidden;
+	overflow: hidden;
 }
 
 
@@ -62,14 +62,21 @@ h1 {
 	font-weight: normal;
 }
 .ui-state-default.slick-header-column {
+	background-image: none;
 	background-color: gray;
 	color: #fff;
 }
-
+.ui-body-c, .ui-overlay-c {
+    color: #333333;
+    text-shadow: none;
+}
 /* jquery mobile over writes */
 .ui-header {
 	height: 42px;
-	over-flow: hidden;
+	overflow: hidden;
+}
+.ui-widget {
+    font-size: 1em;
 }
 
 /* Modify */
@@ -81,4 +88,10 @@ h1 {
 .negative {
     color: #EF4623;
     font-weight: bold;
+}
+.right-align {
+	text-align: right;
+}
+.pre-dollar:before {
+	content: "$";
 }
