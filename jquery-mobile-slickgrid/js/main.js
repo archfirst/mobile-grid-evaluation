@@ -1,21 +1,21 @@
 (function ($) {
-    'use strict';
+    "use strict";
 
     var grid, data, columns, options;
 
-	data = positions || {}; // get from ../data/positions.js
-	// Compute position values
+    data = positions || {}; // get from ../data/positions.js
+    // Compute position values
     $.each(positions, function (index, position) {
         position.marketValue = position.lastTrade * position.quantity;
         position.totalCost = position.pricePaid * position.quantity;
         position.gain = position.marketValue - position.totalCost;
         position.gainPercent = (position.gain / position.totalCost) * 100;
 
-		position.lastTrade = position.lastTrade.toFixed(2);
-		position.marketValue = position.marketValue.toFixed(2);
-		position.totalCost = position.totalCost.toFixed(2);
-		position.gain = position.gain.toFixed(2);
-		position.gainPercent = position.gainPercent.toFixed(2);
+        position.lastTrade = position.lastTrade.toFixed(2);
+        position.marketValue = position.marketValue.toFixed(2);
+        position.totalCost = position.totalCost.toFixed(2);
+        position.gain = position.gain.toFixed(2);
+        position.gainPercent = position.gainPercent.toFixed(2);
     });
 
     // Preparing the Columns
@@ -49,9 +49,9 @@
     }
 
     function getColumns() {
-		var windowWidth, newColumns, columnPriorities, maxPriority, i;
+        var windowWidth, newColumns, columnPriorities, maxPriority, i;
 
-		windowWidth = $(window).width();
+        windowWidth = $(window).width();
         newColumns = [];
 
         /* Column priorities */
@@ -81,22 +81,22 @@
         $('.window-size').html("(" + win.width() + ", " + win.height() + ")");
         console.log(win.height());
     }
-	function resizeGrid() {
+    function resizeGrid() {
         $("#positions-table").css("height", ($(window).height() - 132) + "px");
-	}
+    }
 
-	// Render table
+    // Render table
     function drawGrid() {
         var newColumns = getColumns();
         options.rowHeight = getRowHeight();
         displayWindowSize();
-		resizeGrid();
+        resizeGrid();
         grid = new Slick.Grid("#positions-table", data, newColumns, options);
-		grid.onClick.subscribe(function (e, args) {
-			var rowName = data[args.row].security;
-			//console.log(data[args.row].security);
-			$("#selected-position").text(rowName);
-		});
+        grid.onClick.subscribe(function (e, args) {
+            var rowName = data[args.row].security;
+            //console.log(data[args.row].security);
+            $("#selected-position").text(rowName);
+        });
         //grid.resizeCanvas();
     }
     $(window).on("resize", function () {
