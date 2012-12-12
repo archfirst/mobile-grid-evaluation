@@ -224,7 +224,7 @@ $(document).ready(function () {
                 },
                 "sTitle": "Gain %",
                 "sType": "formatted-num",
-                "sClass": "gain-percentage priority2"
+                "sClass": "gain-percent priority2"
             }
         ],
         "bFilter": false, //toggle search filter
