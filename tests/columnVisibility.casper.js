@@ -1,12 +1,11 @@
-//USAGE: casperjs.bat dataTablesMobileGrid.casper.js http://www.example.com
-
-var casper = require('casper').create();
-var viewports = [
-    { 'name': 'Wide', 'size': {width: 1400, height: 900}},
-    { 'name': 'Medium', 'size': {width: 768, height: 980}},
-    { 'name': 'Narrow', 'size': {width: 320, height: 568}}
-];
-var url = casper.cli.args[0];
+//USAGE: casperjs.bat columnVisibility.casper.js http://www.example.com
+var casper = require('casper').create(),
+    viewports = [
+    { 'name': 'Wide', 'size': {'width': 1400, 'height': 900}},
+    { 'name': 'Medium', 'size': {'width': 768, 'height': 980}},
+    { 'name': 'Narrow', 'size': {'width': 320, 'height': 568}}
+    ],
+    url = casper.cli.args[0];
 
 casper.start().each(viewports, function(casper, viewport) {
     this.then(function() {
