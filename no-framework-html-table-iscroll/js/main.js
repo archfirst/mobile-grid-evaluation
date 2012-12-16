@@ -1,4 +1,6 @@
+/*global positions:true, iScroll:true */
 $(document).ready(function() {
+    'use strict';
 
     // Register Handlebar helpers
     Handlebars.registerHelper('formatMoney', function(amount) {
@@ -37,8 +39,9 @@ $(document).ready(function() {
 
     // Display window size on resize events
     function displayWindowSize() {
+        /*jshint validthis:true */
         var win = $(this);
-        $('.window-size').html("(" + win.width() + ", " + win.height() + ")");
+        $('.window-size').html('(' + win.width() + ', ' + win.height() + ')');
     }
     $(window).resize(displayWindowSize);
 
@@ -62,6 +65,7 @@ $(document).ready(function() {
 
     // Fit table when window resizes
     function fitTable() {
+        /*jshint validthis:true */
         var winHeight = $(this).height();
         $('#positions-table-body-wrapper').height(winHeight - fixedSectionsHeight);
         setTimeout(function() {
@@ -72,7 +76,7 @@ $(document).ready(function() {
         for (var i = 0; i < headerColumns.length; i++) {
             $(headerColumns[i]).width($(bodyColumns[i]).width());
         }
-    };
+    }
     $(window).resize(fitTable);
 
     // Perform initial setup
