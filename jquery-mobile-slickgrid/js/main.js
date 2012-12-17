@@ -69,6 +69,7 @@
         for (i = 0; i < columns.length; i++) {
             if (columnPriorities[i] <= maxPriority) {
                 newColumns.push(columns[i]);
+
             }
         }
         //console.log(newColumns.length);
@@ -84,6 +85,7 @@
     function resizeGrid() {
         $("#positions-table").css("height", ($(window).height() - 132) + "px");
     }
+
 
     // Render table
     function drawGrid() {
@@ -108,3 +110,4 @@
     });
 
 }(jQuery));
+

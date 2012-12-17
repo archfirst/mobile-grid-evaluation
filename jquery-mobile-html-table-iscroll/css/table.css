@@ -1,8 +1,19 @@
 /* -----------------------------------------------------------------------------
  * Positions Table
  * -------------------------------------------------------------------------- */
+/* With fixed layout, we can set column widths for the header very precisely */
+#positions-table-header {
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+#positions-table-body {
+    border-spacing: 0;
+    width: 100%;
+}
+
 /* Following styles are required by iScroll, otherwise scroller will not work */
-#positions-table-wrapper {
+#positions-table-body-wrapper {
     left: 0;
     overflow: auto;
     position: absolute;
@@ -11,68 +22,32 @@
 }
 
 /* Following styles are required by iScroll, otherwise scroller will not work */
-#positions-table-scroller {
+#positions-table-body-scroller {
     width: 100%;
     padding: 0;
     position: absolute;
     z-index: 1;
 }
 
-#positions-table {
+#positions-table-body {
     border-spacing: 0;
     padding: 0 10px;
     width: 100%;
 }
 
-#positions-table th,
-#positions-table td {
-    padding: 0 5px;
-}
-
-#positions-table th {
+#positions-table-header th {
     background-color: #808080;
     color: #FFFFFF;
     text-shadow: none;
 }
 
-#positions-table td {
+#positions-table-wrapper th,
+#positions-table-wrapper td {
+    padding: 0 5px;
+}
+
+#positions-table-body td {
     border-bottom: solid 1px #B2B2B2;
-}
-
-#positions-table .security {
-    text-align: left;
-}
-
-#positions-table .symbol {
-    text-align: center;
-}
-
-#positions-table .quantity {
-    text-align: right;
-}
-
-#positions-table .last-trade {
-    text-align: right;
-}
-
-#positions-table .market-value {
-    text-align: right;
-}
-
-#positions-table .price-paid {
-    text-align: right;
-}
-
-#positions-table .total-cost {
-    text-align: right;
-}
-
-#positions-table .gain {
-    text-align: right;
-}
-
-#positions-table .gain-percent {
-    text-align: right;
 }
 
 /* -----------------------------------------------------------------------------
@@ -86,13 +61,30 @@
     .priority3 { display: none; }
     
     /* Table styles */
-    #positions-table th {
+    #positions-table-header th {
         font-size: 16px;
         height: 44px;
     }
-    #positions-table td {
+    #positions-table-body td {
         font-size: 16px;
         height: 44px;
+    }
+
+    /* Column Widths */
+    #positions-table-wrapper .symbol {
+        width: 20%;
+    }
+
+    #positions-table-wrapper .quantity {
+        width: 20%;
+    }
+
+    #positions-table-wrapper .last-trade {
+        width: 30%;
+    }
+
+    #positions-table-wrapper .market-value {
+        width: 30%;
     }
 }
 
@@ -106,13 +98,38 @@
     .priority3 { display: none; }
     
     /* Table styles */
-    #positions-table th {
+    #positions-table-header th {
         font-size: 16px;
         height: 44px;
     }
-    #positions-table td {
+    #positions-table-body td {
         font-size: 16px;
         height: 44px;
+    }
+
+    /* Column Widths */
+    #positions-table-wrapper .symbol {
+        width: 15%;
+    }
+
+    #positions-table-wrapper .quantity {
+        width: 15%;
+    }
+
+    #positions-table-wrapper .last-trade {
+        width: 20%;
+    }
+
+    #positions-table-wrapper .market-value {
+        width: 20%;
+    }
+
+    #positions-table-wrapper .price-paid {
+        width: 20%;
+    }
+
+    #positions-table-wrapper .gain-percent {
+        width: 10%;
     }
 }
 
@@ -123,12 +140,50 @@
     .layout-info:before { content: "Wide Layout (900+)"; }
     
     /* Table styles */
-    #positions-table th {
+    /* Table styles */
+    #positions-table-header th {
         font-size: 13px;
         height: 30px;
     }
-    #positions-table td {
+    #positions-table-body td {
         font-size: 14px;
         height: 32px;
+    }
+
+    /* Column Widths */
+    #positions-table-wrapper .security {
+        width: 25%;
+    }
+
+    #positions-table-wrapper .symbol {
+        width: 7%;
+    }
+
+    #positions-table-wrapper .quantity {
+        width: 7%;
+    }
+
+    #positions-table-wrapper .last-trade {
+        width: 9%;
+    }
+
+    #positions-table-wrapper .market-value {
+        width: 12%;
+    }
+
+    #positions-table-wrapper .price-paid {
+        width: 10%;
+    }
+
+    #positions-table-wrapper .total-cost {
+        width: 10%;
+    }
+
+    #positions-table-wrapper .gain {
+        width: 11%;
+    }
+
+    #positions-table-wrapper .gain-percent {
+        width: 9%;
     }
 }

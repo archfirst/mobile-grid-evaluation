@@ -1,7 +1,25 @@
-/* -----------------------------------------------------------------------------
- * Positions Table
- * -------------------------------------------------------------------------- */
+.ui-jqgrid-htable thead tr{
+    background-color:gray;    
+    color: #FFFFFF;
+    height:30px
+}
 
+.positive {
+    color: #F79F20;
+    font-weight: bold;
+}
+
+.negative {
+    color: #EF4623;
+    font-weight: bold;
+}
+
+.currency,.number,#positions-table_quantity,
+#positions-table_lastTrade,#positions-table_marketValue,
+#positions-table_pricePaid,#positions-table_totalCost,
+#positions-table_gain,#positions-table_gainPercent{
+    text-align:right;
+}
 
 /* -----------------------------------------------------------------------------
  * Narrow Layout (0-499)
@@ -12,6 +30,16 @@
     /* hide priority2 and priority3 columns */
     .priority2 { display: none; }
     .priority3 { display: none; }
+    
+    /* Table styles */
+    #positions-table th {
+        font-size: 16px;
+        height: 44px;
+    }
+    #positions-table td {
+        font-size: 16px;
+        height: 44px;
+    }
 }
 
 /* -----------------------------------------------------------------------------
@@ -22,6 +50,16 @@
 
     /* hide priority3 columns */
     .priority3 { display: none; }
+    
+    /* Table styles */
+    #positions-table th {
+        font-size: 16px;
+        height: 44px;
+    }
+    #positions-table td {
+        font-size: 16px;
+        height: 44px;
+    }
 }
 
 /* -----------------------------------------------------------------------------
@@ -29,4 +67,14 @@
  * -------------------------------------------------------------------------- */
 @media screen and (min-width: 900px) {
     .layout-info:before { content: "Wide Layout (900+)"; }
+    
+    /* Table styles */
+    #positions-table th {
+        font-size: 13px;
+        height: 30px;
+    }
+    #positions-table td {
+        font-size: 14px;
+        height: 32px;
+    }
 }

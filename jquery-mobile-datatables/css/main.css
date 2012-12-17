@@ -1,0 +1,36 @@
+html, body, div, h1, ul {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    margin: 8px;
+}
+
+h1 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 16px;
+}
+
+a {
+    font-size: 16px;
+}
+
+.hide {
+    display: none;
+}
+
+.layout-info {
+    font-size: 10px;
+    margin-top: 10px;
+}

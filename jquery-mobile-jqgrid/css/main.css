@@ -1,34 +1,10 @@
-body {
-    font-family: Arial, Verdana, Helvetica, sans-serif;
+body{
+    font-family:Helvetica,Arial,sans-serif;
+    overflow:hidden;
 }
 
-h1 {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-/* -----------------------------------------------------------------------------
- * Colors
- * -------------------------------------------------------------------------- */
-/* override the default grey background */
-.ui-body-c {
-    background: white;
-}
-
-.positive {
-    color: #F79F20;
-    font-weight: bold;
-}
-
-.negative {
-    color: #EF4623;
-    font-weight: bold;
-}
-
-/* -----------------------------------------------------------------------------
- * Selected Position
- * -------------------------------------------------------------------------- */
 #selected-position {
+    clear:both;
     background-color: #E0E0E0;
     font: normal normal 20px/35px Arial;
     height: 35px;
@@ -41,4 +17,20 @@ h1 {
 .layout-info {
     font-size: 10px;
     margin-top: 10px;
+}
+
+#positions-header h1{
+    display:block;
+    font-size: 15px;
+    background-color:#000000;
+    color:#FFFFFF;
+    padding:10px;    
+    text-align:center;
+    width:100%;
+    top:0px;
+    margin:0px 0px 10px 0px;
+}
+
+.ui-loader{
+    display:none;
 }
