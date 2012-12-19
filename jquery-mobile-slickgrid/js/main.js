@@ -1,34 +1,28 @@
 (function ($) {
     "use strict";
 
-    var grid, data, columns, options;
+    var grid, data, columns, options, columnWidths;
 
-    data = positions || {}; // get from ../data/positions.js
+    data = positions || []; // get from ../data/positions.js
     // Compute position values
     $.each(positions, function (index, position) {
         position.marketValue = position.lastTrade * position.quantity;
         position.totalCost = position.pricePaid * position.quantity;
         position.gain = position.marketValue - position.totalCost;
         position.gainPercent = (position.gain / position.totalCost) * 100;
-
-        position.lastTrade = position.lastTrade.toFixed(2);
-        position.marketValue = position.marketValue.toFixed(2);
-        position.totalCost = position.totalCost.toFixed(2);
-        position.gain = position.gain.toFixed(2);
-        position.gainPercent = position.gainPercent.toFixed(2);
     });
 
     // Preparing the Columns
     columns = [
-        {id: "security", name: "Security", field: "security", width: 200, resizable: false},
-        {id: "symbol", name: "Symbol", field: "symbol"},
-        {id: "quantity", name: "Quantity", field: "quantity", cssClass: "right-align"},
-        {id: "last-trade", name: "Last Trade", field: "lastTrade", cssClass: "pre-dollar right-align" },
-        {id: "market-value", name: "Market Value", field: "marketValue", cssClass: "pre-dollar right-align" },
-        {id: "price-paid", name: "Price Paid", field: "pricePaid", cssClass: "pre-dollar positive right-align"},
-        {id: "total-cost", name: "Total Cost", field: "totalCost", cssClass: "pre-dollar right-align"},
-        {id: "gain", name: "Gain", field: "gain", cssClass: "pre-dollar positive right-align"},
-        {id: "gain-percent", name: "Gain Percent", field: "gainPercent", cssClass: "pre-dollar right-align"}
+        {id: "security", name: "Security", field: "security", width: 200, resizable: false, headerCssClass:"cell-left-align", minWidth:300},
+        {id: "symbol", name: "Symbol", field: "symbol", cssClass:"cell-center-align", maxWidth:80},
+        {id: "quantity", name: "Quantity", field: "quantity", cssClass: "right-align", headerCssClass:"cell-right-align"},
+        {id: "last-trade", name: "Last Trade", field: "lastTrade", cssClass: "right-align", headerCssClass:"cell-right-align",  formatter: formatCurrency},
+        {id: "market-value", name: "Market Value", field: "marketValue", cssClass: "right-align", headerCssClass:"cell-right-align", formatter: formatCurrency},
+        {id: "price-paid", name: "Price Paid", field: "pricePaid", cssClass: "right-align", headerCssClass:"cell-right-align", formatter: formatCurrency},
+        {id: "total-cost", name: "Total Cost", field: "totalCost", cssClass: "right-align", headerCssClass:"cell-right-align", formatter: formatCurrency},
+        {id: "gain", name: "Gain", field: "gain", cssClass: "positive right-align", headerCssClass:"cell-right-align", formatter: formatGainMoney},
+        {id: "gain-percent", name: "Gain %", field: "gainPercent", cssClass: "positive right-align", headerCssClass:"cell-right-align", formatter: formatGainPercent}
     ];
 
     // Essential Options
@@ -39,7 +33,32 @@
         forceFitColumns: true,
         rowHeight: 32
     };
-
+	
+	// Number Formatting
+	function formatNumber(amount) {
+        return $.format.number(amount, '#,##0.00');
+    }
+	function formatCurrency(row, cell, value, columnDef, dataContext){
+		return "$" + formatNumber(value);
+	}
+	function formatGainMoney(row, cell, value, columnDef, dataContext) {
+		var formattedValue = formatNumber(value);
+		if (value < 0) {
+			return "<span class='negative'>$("+ (-1 * formattedValue) + ")</span>";
+		} else {
+			return "$" + formattedValue;
+		}
+	}	
+	function formatGainPercent(row, cell, value, columnDef, dataContext) {
+		var formattedValue = formatNumber(value);
+		if (value < 0) {
+			return "<span class='negative'>("+ (-1 * formattedValue) +"%)</span>";
+		} else {
+			return formattedValue + "%";
+		}
+	}
+	
+	// Preparing the Rows and Columns based on Window size
     function getRowHeight() {
         var windowWidth, rowHeight;
 
@@ -76,22 +95,22 @@
 
         return newColumns;
     }
+	
     // Display window size on resize events
     function displayWindowSize() {
         var win = $(window);
         $('.window-size').html("(" + win.width() + ", " + win.height() + ")");
-        console.log(win.height());
+        //console.log(win.height());
     }
+	
     function resizeGrid() {
         $("#positions-table").css("height", ($(window).height() - 132) + "px");
     }
-
 
     // Render table
     function drawGrid() {
         var newColumns = getColumns();
         options.rowHeight = getRowHeight();
-        displayWindowSize();
         resizeGrid();
         grid = new Slick.Grid("#positions-table", data, newColumns, options);
         grid.onClick.subscribe(function (e, args) {
@@ -101,13 +120,15 @@
         });
         //grid.resizeCanvas();
     }
+
     $(window).on("resize", function () {
         drawGrid();
+		displayWindowSize();
     });
 
     $(function () {
         drawGrid();
+		displayWindowSize();
     });
 
 }(jQuery));
-
