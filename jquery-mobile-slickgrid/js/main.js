@@ -21,17 +21,22 @@
         return "$" + formatNumber(value);
     }
     function formatGainMoney(row, cell, value, columnDef, dataContext) {
-        var formattedValue = formatNumber(value);
+        var formattedValue = (value < 0) ?
+							formatNumber(-1 * value):
+							formatNumber(value);
+
         if (value < 0) {
-            return "<span class='negative'>$(" + (-1 * formattedValue) + ")</span>";
+            return "<span class='negative'>$(" + formattedValue + ")</span>";
         }
 
         return "$" + formattedValue;
     }
     function formatGainPercent(row, cell, value, columnDef, dataContext) {
-        var formattedValue = formatNumber(value);
+        var formattedValue = (value < 0) ?
+							formatNumber(-1 * value):
+							formatNumber(value);
         if (value < 0) {
-            return "<span class='negative'>(" + (-1 * formattedValue) + "%)</span>";
+            return "<span class='negative'>(" + formattedValue + "%)</span>";
         }
         return formattedValue + "%";
     }
