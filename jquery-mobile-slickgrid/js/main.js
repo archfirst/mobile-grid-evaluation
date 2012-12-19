@@ -12,17 +12,41 @@
         position.gainPercent = (position.gain / position.totalCost) * 100;
     });
 
+
+    // Number Formatting functions
+    function formatNumber(amount) {
+        return $.format.number(amount, '#,##0.00');
+    }
+    function formatCurrency(row, cell, value, columnDef, dataContext) {
+        return "$" + formatNumber(value);
+    }
+    function formatGainMoney(row, cell, value, columnDef, dataContext) {
+        var formattedValue = formatNumber(value);
+        if (value < 0) {
+            return "<span class='negative'>$(" + (-1 * formattedValue) + ")</span>";
+        }
+
+        return "$" + formattedValue;
+    }
+    function formatGainPercent(row, cell, value, columnDef, dataContext) {
+        var formattedValue = formatNumber(value);
+        if (value < 0) {
+            return "<span class='negative'>(" + (-1 * formattedValue) + "%)</span>";
+        }
+        return formattedValue + "%";
+    }
+
     // Preparing the Columns
     columns = [
-        {id: "security", name: "Security", field: "security", width: 200, resizable: false, headerCssClass:"cell-left-align", minWidth:300},
-        {id: "symbol", name: "Symbol", field: "symbol", cssClass:"cell-center-align", maxWidth:80},
-        {id: "quantity", name: "Quantity", field: "quantity", cssClass: "right-align", headerCssClass:"cell-right-align"},
-        {id: "last-trade", name: "Last Trade", field: "lastTrade", cssClass: "right-align", headerCssClass:"cell-right-align",  formatter: formatCurrency},
-        {id: "market-value", name: "Market Value", field: "marketValue", cssClass: "right-align", headerCssClass:"cell-right-align", formatter: formatCurrency},
-        {id: "price-paid", name: "Price Paid", field: "pricePaid", cssClass: "right-align", headerCssClass:"cell-right-align", formatter: formatCurrency},
-        {id: "total-cost", name: "Total Cost", field: "totalCost", cssClass: "right-align", headerCssClass:"cell-right-align", formatter: formatCurrency},
-        {id: "gain", name: "Gain", field: "gain", cssClass: "positive right-align", headerCssClass:"cell-right-align", formatter: formatGainMoney},
-        {id: "gain-percent", name: "Gain %", field: "gainPercent", cssClass: "positive right-align", headerCssClass:"cell-right-align", formatter: formatGainPercent}
+        {id: "security", name: "Security", field: "security", width: 200, resizable: false, headerCssClass: "cell-left-align", minWidth: 300},
+        {id: "symbol", name: "Symbol", field: "symbol", cssClass: "cell-center-align", maxWidth: 80},
+        {id: "quantity", name: "Quantity", field: "quantity", cssClass: "right-align", headerCssClass: "cell-right-align"},
+        {id: "last-trade", name: "Last Trade", field: "lastTrade", cssClass: "right-align", headerCssClass: "cell-right-align",  formatter: formatCurrency},
+        {id: "market-value", name: "Market Value", field: "marketValue", cssClass: "right-align", headerCssClass: "cell-right-align", formatter: formatCurrency},
+        {id: "price-paid", name: "Price Paid", field: "pricePaid", cssClass: "right-align", headerCssClass: "cell-right-align", formatter: formatCurrency},
+        {id: "total-cost", name: "Total Cost", field: "totalCost", cssClass: "right-align", headerCssClass: "cell-right-align", formatter: formatCurrency},
+        {id: "gain", name: "Gain", field: "gain", cssClass: "positive right-align", headerCssClass: "cell-right-align", formatter: formatGainMoney},
+        {id: "gain-percent", name: "Gain %", field: "gainPercent", cssClass: "positive right-align", headerCssClass: "cell-right-align", formatter: formatGainPercent}
     ];
 
     // Essential Options
@@ -33,32 +57,8 @@
         forceFitColumns: true,
         rowHeight: 32
     };
-	
-	// Number Formatting
-	function formatNumber(amount) {
-        return $.format.number(amount, '#,##0.00');
-    }
-	function formatCurrency(row, cell, value, columnDef, dataContext){
-		return "$" + formatNumber(value);
-	}
-	function formatGainMoney(row, cell, value, columnDef, dataContext) {
-		var formattedValue = formatNumber(value);
-		if (value < 0) {
-			return "<span class='negative'>$("+ (-1 * formattedValue) + ")</span>";
-		} else {
-			return "$" + formattedValue;
-		}
-	}	
-	function formatGainPercent(row, cell, value, columnDef, dataContext) {
-		var formattedValue = formatNumber(value);
-		if (value < 0) {
-			return "<span class='negative'>("+ (-1 * formattedValue) +"%)</span>";
-		} else {
-			return formattedValue + "%";
-		}
-	}
-	
-	// Preparing the Rows and Columns based on Window size
+
+    // Preparing the Rows and Columns based on Window size
     function getRowHeight() {
         var windowWidth, rowHeight;
 
@@ -95,14 +95,14 @@
 
         return newColumns;
     }
-	
+
     // Display window size on resize events
     function displayWindowSize() {
         var win = $(window);
         $('.window-size').html("(" + win.width() + ", " + win.height() + ")");
         //console.log(win.height());
     }
-	
+
     function resizeGrid() {
         $("#positions-table").css("height", ($(window).height() - 132) + "px");
     }
@@ -123,12 +123,12 @@
 
     $(window).on("resize", function () {
         drawGrid();
-		displayWindowSize();
+        displayWindowSize();
     });
 
     $(function () {
         drawGrid();
-		displayWindowSize();
+        displayWindowSize();
     });
 
 }(jQuery));

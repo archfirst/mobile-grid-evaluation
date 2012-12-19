@@ -97,11 +97,12 @@ h1 {
     color: #F79F20;
     font-weight: bold;
 }
-
 .negative {
     color: #EF4623;
     font-weight: bold;
 }
+
+/* For Header Cells :: High specificity*/
 .cell-left-align {
 	text-align: left!important;
 }
@@ -111,9 +112,7 @@ h1 {
 .cell-center-align {
 	text-align: center!important;
 }
-.column-symbol {
-	max-width: 80px;
-}
+
 .right-align {
 	text-align: right;
 }
