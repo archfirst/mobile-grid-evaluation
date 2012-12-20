@@ -22,8 +22,8 @@
     }
     function formatGainMoney(row, cell, value, columnDef, dataContext) {
         var formattedValue = (value < 0) ?
-							formatNumber(-1 * value):
-							formatNumber(value);
+                            formatNumber(-1 * value) :
+                            formatNumber(value);
 
         if (value < 0) {
             return "<span class='negative'>$(" + formattedValue + ")</span>";
@@ -33,8 +33,8 @@
     }
     function formatGainPercent(row, cell, value, columnDef, dataContext) {
         var formattedValue = (value < 0) ?
-							formatNumber(-1 * value):
-							formatNumber(value);
+                            formatNumber(-1 * value) :
+                            formatNumber(value);
         if (value < 0) {
             return "<span class='negative'>(" + formattedValue + "%)</span>";
         }
@@ -64,6 +64,7 @@
     };
 
     // Preparing the Rows and Columns based on Window size
+	// These are calculated each time the window resizes
     function getRowHeight() {
         var windowWidth, rowHeight;
 
@@ -96,19 +97,18 @@
 
             }
         }
-        //console.log(newColumns.length);
-
         return newColumns;
     }
 
-    // Display window size on resize events
+    // Display window size on window resize
     function displayWindowSize() {
         var win = $(window);
         $('.window-size').html("(" + win.width() + ", " + win.height() + ")");
         //console.log(win.height());
     }
 
-    function resizeGrid() {
+
+    function resizeGridContainer() {
         $("#positions-table").css("height", ($(window).height() - 132) + "px");
     }
 
@@ -116,7 +116,7 @@
     function drawGrid() {
         var newColumns = getColumns();
         options.rowHeight = getRowHeight();
-        resizeGrid();
+        resizeGridContainer();
         grid = new Slick.Grid("#positions-table", data, newColumns, options);
         grid.onClick.subscribe(function (e, args) {
             var rowName = data[args.row].security;

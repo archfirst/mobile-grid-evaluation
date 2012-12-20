@@ -75,8 +75,6 @@ h1 {
 .slick-cell{
 	border-right: none !important;
 	border-left: none !important;
-	height: 32px !important;
-	line-height: 32px;
 }
 
 /* jquery mobile over writes */
@@ -118,4 +116,50 @@ h1 {
 }
 .center-align {
 	text-align: center;
+}
+
+
+
+
+/* -----------------------------------------------------------------------------
+ * Narrow Layout (0-499)
+ * -------------------------------------------------------------------------- */
+@media screen and (max-width: 499px) {
+	/* slick grid over writes */
+    .slick-cell{
+		height: 44px !important;
+		line-height: 44px;
+	}
+	
+	.ui-widget {
+		font-size: 16px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *  Medium Layout (500-899)
+ * -------------------------------------------------------------------------- */
+@media screen and (min-width: 500px) and (max-width: 899px) {
+	/* slick grid over writes */
+    .slick-cell{
+		height: 44px !important;
+		line-height: 44px;
+	}
+	
+	.ui-widget {
+		font-size: 16px;
+	}
+}
+/* -----------------------------------------------------------------------------
+ *  Wide Layout (900+)
+ * -------------------------------------------------------------------------- */
+@media screen and (min-width: 900px) {
+	.slick-cell{
+		height: 32px !important;
+		line-height: 32px;
+	}
+	
+	.ui-widget {
+		font-size: 14px;
+	}
 }
