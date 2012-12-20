@@ -51,9 +51,9 @@ h1 {
 }
 
 
-
-/* slick grid over writes */
-
+/* -----------------------------------------------------------------------------
+ * slick grid over writes
+ * -------------------------------------------------------------------------- */
 .slick-header-column, .slick-header .slick-header-column.ui-state-default {
 	font-size: 13px;
 	font-weight: bold;
@@ -76,7 +76,9 @@ h1 {
 	border-left: none;
 }
 
-/* jquery mobile over writes */
+/* -----------------------------------------------------------------------------
+ * jquery mobile over writes
+ * -------------------------------------------------------------------------- */
 .ui-header {
 	height: 36px;
 	overflow: hidden;
@@ -89,7 +91,10 @@ h1 {
 	margin: 10px 0;
 }
 
-/* Modify */
+
+/* -----------------------------------------------------------------------------
+ * Grid Specific Styles
+ * -------------------------------------------------------------------------- */
 .positive {
     color: #F79F20;
     font-weight: bold;
@@ -108,6 +113,7 @@ h1 {
 .slick-header .slick-header-column.center-align, .center-align {
 	text-align: center;
 }
+
 
 /* -----------------------------------------------------------------------------
  * Narrow Layout (0-499)
