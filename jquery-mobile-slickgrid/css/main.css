@@ -54,14 +54,13 @@ h1 {
 
 /* slick grid over writes */
 
-.slick-header-column, .slick-header-column.ui-state-default {
+.slick-header-column, .slick-header .slick-header-column.ui-state-default {
 	font-size: 13px;
 	font-weight: bold;
-	height: 30px !important;
-	line-height: 30px!important;
-	border-right:none !important;
+	height: 30px;
+	line-height: 30px;
 	background-image: none;
-	padding: 0 5px !important;
+	padding: 0;
 	background-color: gray;
 	color: #fff;
 	text-align: center;
@@ -72,9 +71,9 @@ h1 {
     color: #333333;
     text-shadow: none;
 }
-.slick-cell{
-	border-right: none !important;
-	border-left: none !important;
+.slick-row.even .slick-cell, .slick-row.odd .slick-cell, .slick-header .slick-header-column.ui-state-default {
+	border-right: none;
+	border-left: none;
 }
 
 /* jquery mobile over writes */
@@ -100,37 +99,27 @@ h1 {
     font-weight: bold;
 }
 
-/* For Header Cells :: High specificity*/
-.cell-left-align {
-	text-align: left!important;
+.slick-header .slick-header-column.left-align, .left-align {
+	text-align: left;
 }
-.cell-right-align {
-	text-align: right!important;
-}
-.cell-center-align {
-	text-align: center!important;
-}
-
-.right-align {
+.slick-header .slick-header-column.right-align, .right-align {
 	text-align: right;
 }
-.center-align {
+.slick-header .slick-header-column.center-align, .center-align {
 	text-align: center;
 }
-
-
-
 
 /* -----------------------------------------------------------------------------
  * Narrow Layout (0-499)
  * -------------------------------------------------------------------------- */
 @media screen and (max-width: 499px) {
 	/* slick grid over writes */
-    .slick-cell{
-		height: 44px !important;
+    .slick-row.even .slick-cell, .slick-row.odd .slick-cell{
+		height: 44px;
 		line-height: 44px;
 	}
 	
+	/* jquery mobile over writes */
 	.ui-widget {
 		font-size: 16px;
 	}
@@ -141,11 +130,12 @@ h1 {
  * -------------------------------------------------------------------------- */
 @media screen and (min-width: 500px) and (max-width: 899px) {
 	/* slick grid over writes */
-    .slick-cell{
-		height: 44px !important;
+    .slick-row.even .slick-cell, .slick-row.odd .slick-cell{
+		height: 44px;
 		line-height: 44px;
 	}
 	
+	/* jquery mobile over writes */
 	.ui-widget {
 		font-size: 16px;
 	}
@@ -154,11 +144,13 @@ h1 {
  *  Wide Layout (900+)
  * -------------------------------------------------------------------------- */
 @media screen and (min-width: 900px) {
-	.slick-cell{
-		height: 32px !important;
+	/* slick grid over writes */
+	.slick-row.even .slick-cell, .slick-row.odd .slick-cell{
+		height: 32px;
 		line-height: 32px;
 	}
 	
+	/* jquery mobile over writes */
 	.ui-widget {
 		font-size: 14px;
 	}

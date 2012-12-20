@@ -43,15 +43,15 @@
 
     // Preparing the Columns
     columns = [
-        {id: "security", name: "Security", field: "security", width: 200, resizable: false, headerCssClass: "cell-left-align", minWidth: 300},
-        {id: "symbol", name: "Symbol", field: "symbol", cssClass: "cell-center-align", maxWidth: 80},
-        {id: "quantity", name: "Quantity", field: "quantity", cssClass: "right-align", headerCssClass: "cell-right-align"},
-        {id: "last-trade", name: "Last Trade", field: "lastTrade", cssClass: "right-align", headerCssClass: "cell-right-align",  formatter: formatCurrency},
-        {id: "market-value", name: "Market Value", field: "marketValue", cssClass: "right-align", headerCssClass: "cell-right-align", formatter: formatCurrency},
-        {id: "price-paid", name: "Price Paid", field: "pricePaid", cssClass: "right-align", headerCssClass: "cell-right-align", formatter: formatCurrency},
-        {id: "total-cost", name: "Total Cost", field: "totalCost", cssClass: "right-align", headerCssClass: "cell-right-align", formatter: formatCurrency},
-        {id: "gain", name: "Gain", field: "gain", cssClass: "positive right-align", headerCssClass: "cell-right-align", formatter: formatGainMoney},
-        {id: "gain-percent", name: "Gain %", field: "gainPercent", cssClass: "positive right-align", headerCssClass: "cell-right-align", formatter: formatGainPercent}
+        {id: "security", name: "Security", field: "security", width: 200, resizable: false, headerCssClass: "left-align", minWidth: 300},
+        {id: "symbol", name: "Symbol", field: "symbol", cssClass: "center-align", maxWidth: 80},
+        {id: "quantity", name: "Quantity", field: "quantity", cssClass: "right-align", headerCssClass: "right-align"},
+        {id: "last-trade", name: "Last Trade", field: "lastTrade", cssClass: "right-align", headerCssClass: "right-align",  formatter: formatCurrency},
+        {id: "market-value", name: "Market Value", field: "marketValue", cssClass: "right-align", headerCssClass: "right-align", formatter: formatCurrency},
+        {id: "price-paid", name: "Price Paid", field: "pricePaid", cssClass: "right-align", headerCssClass: "right-align", formatter: formatCurrency},
+        {id: "total-cost", name: "Total Cost", field: "totalCost", cssClass: "right-align", headerCssClass: "right-align", formatter: formatCurrency},
+        {id: "gain", name: "Gain", field: "gain", cssClass: "positive right-align", headerCssClass: "right-align", formatter: formatGainMoney},
+        {id: "gain-percent", name: "Gain %", field: "gainPercent", cssClass: "positive right-align", headerCssClass: "right-align", formatter: formatGainPercent}
     ];
 
     // Essential Options
@@ -120,7 +120,7 @@
         grid = new Slick.Grid("#positions-table", data, newColumns, options);
         grid.onClick.subscribe(function (e, args) {
             var rowName = data[args.row].security;
-            //console.log(data[args.row].security);
+            //Display
             $("#selected-position").text(rowName);
         });
         //grid.resizeCanvas();
