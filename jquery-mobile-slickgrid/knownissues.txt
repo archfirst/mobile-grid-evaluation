@@ -1,1 +1,0 @@
-Resolution lessthan 300 x 300 displaying the v-scroll bar
