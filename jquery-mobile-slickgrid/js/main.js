@@ -1,3 +1,4 @@
+/*global positions:true, Slick:true */
 (function ($, undefined) {
     'use strict';
 
