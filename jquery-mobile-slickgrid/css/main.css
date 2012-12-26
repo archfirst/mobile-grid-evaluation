@@ -54,7 +54,7 @@ h1 {
 /* -----------------------------------------------------------------------------
  * slick grid over writes
  * -------------------------------------------------------------------------- */
-.slick-header-column, .slick-header .slick-header-column.ui-state-default {
+.slick-header-column, .slick-header .slick-header-columns .slick-header-column {
 	font-size: 13px;
 	font-weight: bold;
 	height: 30px;
@@ -63,17 +63,12 @@ h1 {
 	padding: 0;
 	background-color: gray;
 	color: #fff;
-	text-align: center;
+
 }
 
-
-.ui-body-c, .ui-overlay-c {
-    color: #333333;
-    text-shadow: none;
-}
-.slick-row.even .slick-cell, .slick-row.odd .slick-cell, .slick-header .slick-header-column.ui-state-default {
-	border-right: none;
+.slick-row .slick-cell,  .slick-header .slick-header-columns .slick-header-column{
 	border-left: none;
+	border-right: none;
 }
 
 /* -----------------------------------------------------------------------------
@@ -90,27 +85,21 @@ h1 {
 .ui-header .ui-title, .ui-footer .ui-title {
 	margin: 10px 0;
 }
-
+.ui-body-c, .ui-overlay-c {
+    color: #333333;
+    text-shadow: none;
+}
 
 /* -----------------------------------------------------------------------------
- * Grid Specific Styles
+ * column Styles
  * -------------------------------------------------------------------------- */
-.positive {
-    color: #F79F20;
-    font-weight: bold;
-}
-.negative {
-    color: #EF4623;
-    font-weight: bold;
-}
-
-.slick-header .slick-header-column.left-align, .left-align {
+.slick-header .slick-header-columns .left-align, .left-align {
 	text-align: left;
 }
-.slick-header .slick-header-column.right-align, .right-align {
+.slick-header .slick-header-columns .right-align, .right-align {
 	text-align: right;
 }
-.slick-header .slick-header-column.center-align, .center-align {
+.slick-header .slick-header-columns .center-align, .center-align {
 	text-align: center;
 }
 
@@ -120,7 +109,7 @@ h1 {
  * -------------------------------------------------------------------------- */
 @media screen and (max-width: 499px) {
 	/* slick grid over writes */
-    .slick-row.even .slick-cell, .slick-row.odd .slick-cell{
+    .slick-viewport .slick-row .slick-cell{
 		height: 44px;
 		line-height: 44px;
 	}
@@ -136,7 +125,7 @@ h1 {
  * -------------------------------------------------------------------------- */
 @media screen and (min-width: 500px) and (max-width: 899px) {
 	/* slick grid over writes */
-    .slick-row.even .slick-cell, .slick-row.odd .slick-cell{
+    .slick-viewport .slick-row .slick-cell{
 		height: 44px;
 		line-height: 44px;
 	}
@@ -151,7 +140,7 @@ h1 {
  * -------------------------------------------------------------------------- */
 @media screen and (min-width: 900px) {
 	/* slick grid over writes */
-	.slick-row.even .slick-cell, .slick-row.odd .slick-cell{
+	.slick-viewport .slick-row .slick-cell {
 		height: 32px;
 		line-height: 32px;
 	}
