@@ -45,40 +45,108 @@ h1 {
 	bottom: 0;
     font-size: 10px;
     margin-top: 10px;
-	background-color: #ff0;
 	line-height: 30px;
 	height: 30px;
-	over-flow: hidden;
+	overflow: hidden;
 }
 
 
-
-/* slick grid over writes */
-.slick-header-column, .slick-header-column.ui-state-default {
-	height: 32px;
-	line-height: 32px;
-}
-.slick-header-column.ui-state-default {
-	font-weight: normal;
-}
-.ui-state-default.slick-header-column {
+/* -----------------------------------------------------------------------------
+ * slick grid over writes
+ * -------------------------------------------------------------------------- */
+.slick-header-column, .slick-header .slick-header-columns .slick-header-column {
+	font-size: 13px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	background-image: none;
+	padding: 0;
 	background-color: gray;
 	color: #fff;
+
 }
 
-/* jquery mobile over writes */
+.slick-row .slick-cell,  .slick-header .slick-header-columns .slick-header-column{
+	border-left: none;
+	border-right: none;
+}
+
+/* -----------------------------------------------------------------------------
+ * jquery mobile over writes
+ * -------------------------------------------------------------------------- */
 .ui-header {
-	height: 42px;
-	over-flow: hidden;
+	height: 36px;
+	overflow: hidden;
+}
+.ui-widget {
+    font-size: 14px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+.ui-header .ui-title, .ui-footer .ui-title {
+	margin: 10px 0;
+}
+.ui-body-c, .ui-overlay-c {
+    color: #333333;
+    text-shadow: none;
 }
 
-/* Modify */
-.positive {
-    color: #F79F20;
-    font-weight: bold;
+/* -----------------------------------------------------------------------------
+ * column Styles
+ * -------------------------------------------------------------------------- */
+.slick-header .slick-header-columns .left-align, .left-align {
+	text-align: left;
+}
+.slick-header .slick-header-columns .right-align, .right-align {
+	text-align: right;
+}
+.slick-header .slick-header-columns .center-align, .center-align {
+	text-align: center;
 }
 
-.negative {
-    color: #EF4623;
-    font-weight: bold;
+
+/* -----------------------------------------------------------------------------
+ * Narrow Layout (0-499)
+ * -------------------------------------------------------------------------- */
+@media screen and (max-width: 499px) {
+	/* slick grid over writes */
+    .slick-viewport .slick-row .slick-cell{
+		height: 44px;
+		line-height: 44px;
+	}
+	
+	/* jquery mobile over writes */
+	.ui-widget {
+		font-size: 16px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *  Medium Layout (500-899)
+ * -------------------------------------------------------------------------- */
+@media screen and (min-width: 500px) and (max-width: 899px) {
+	/* slick grid over writes */
+    .slick-viewport .slick-row .slick-cell{
+		height: 44px;
+		line-height: 44px;
+	}
+	
+	/* jquery mobile over writes */
+	.ui-widget {
+		font-size: 16px;
+	}
+}
+/* -----------------------------------------------------------------------------
+ *  Wide Layout (900+)
+ * -------------------------------------------------------------------------- */
+@media screen and (min-width: 900px) {
+	/* slick grid over writes */
+	.slick-viewport .slick-row .slick-cell {
+		height: 32px;
+		line-height: 32px;
+	}
+	
+	/* jquery mobile over writes */
+	.ui-widget {
+		font-size: 14px;
+	}
 }
