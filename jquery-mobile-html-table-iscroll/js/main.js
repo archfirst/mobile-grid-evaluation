@@ -67,7 +67,7 @@ $(document).ready(function() {
     // Fit table when window resizes
     function fitTable() {
         /*jshint validthis:true */
-        var winHeight = $(this).height();
+        var winHeight = $(window).height();
         $('#positions-table-body-wrapper').height(winHeight - fixedSectionsHeight);
         setTimeout(function() {
             myScroll.refresh();

@@ -2,18 +2,32 @@
  * Positions Table
  * -------------------------------------------------------------------------- */
 /* With fixed layout, we can set column widths for the header very precisely */
-#positions-table-header {
+.table-header {
+    background-color: #808080;
     border-spacing: 0;
+    color: #FFFFFF;
     table-layout: fixed;
-}
-
-#positions-table-body {
-    border-spacing: 0;
+    text-shadow: none;
     width: 100%;
 }
 
+.table-body {
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table-header th,
+.table-body td {
+    padding: 0 5px;
+}
+
+.table-body td {
+    border-bottom: solid 1px #B2B2B2;
+}
+
 /* Following styles are required by iScroll, otherwise scroller will not work */
-#positions-table-body-wrapper {
+.table-body-wrapper {
     left: 0;
     overflow: auto;
     position: absolute;
@@ -22,32 +36,11 @@
 }
 
 /* Following styles are required by iScroll, otherwise scroller will not work */
-#positions-table-body-scroller {
+.table-body-scroller {
     width: 100%;
     padding: 0;
     position: absolute;
     z-index: 1;
-}
-
-#positions-table-body {
-    border-spacing: 0;
-    padding: 0 10px;
-    width: 100%;
-}
-
-#positions-table-header th {
-    background-color: #808080;
-    color: #FFFFFF;
-    text-shadow: none;
-}
-
-#positions-table-wrapper th,
-#positions-table-wrapper td {
-    padding: 0 5px;
-}
-
-#positions-table-body td {
-    border-bottom: solid 1px #B2B2B2;
 }
 
 /* -----------------------------------------------------------------------------
@@ -59,31 +52,31 @@
     /* hide priority2 and priority3 columns */
     .priority2 { display: none; }
     .priority3 { display: none; }
-    
+
     /* Table styles */
-    #positions-table-header th {
+    .table-header th {
         font-size: 16px;
         height: 44px;
     }
-    #positions-table-body td {
+    .table-body td {
         font-size: 16px;
         height: 44px;
     }
 
     /* Column Widths */
-    #positions-table-wrapper .symbol {
+    .symbol {
         width: 20%;
     }
 
-    #positions-table-wrapper .quantity {
+    .quantity {
         width: 20%;
     }
 
-    #positions-table-wrapper .last-trade {
+    .last-trade {
         width: 30%;
     }
 
-    #positions-table-wrapper .market-value {
+    .market-value {
         width: 30%;
     }
 }
@@ -96,39 +89,39 @@
 
     /* hide priority3 columns */
     .priority3 { display: none; }
-    
+
     /* Table styles */
-    #positions-table-header th {
+    .table-header th {
         font-size: 16px;
         height: 44px;
     }
-    #positions-table-body td {
+    .table-body td {
         font-size: 16px;
         height: 44px;
     }
 
     /* Column Widths */
-    #positions-table-wrapper .symbol {
+    .symbol {
         width: 15%;
     }
 
-    #positions-table-wrapper .quantity {
+    .quantity {
         width: 15%;
     }
 
-    #positions-table-wrapper .last-trade {
+    .last-trade {
         width: 20%;
     }
 
-    #positions-table-wrapper .market-value {
+    .market-value {
         width: 20%;
     }
 
-    #positions-table-wrapper .price-paid {
+    .price-paid {
         width: 20%;
     }
 
-    #positions-table-wrapper .gain-percent {
+    .gain-percent {
         width: 10%;
     }
 }
@@ -138,52 +131,52 @@
  * -------------------------------------------------------------------------- */
 @media screen and (min-width: 900px) {
     .layout-info:before { content: "Wide Layout (900+)"; }
-    
+
     /* Table styles */
     /* Table styles */
-    #positions-table-header th {
+    .table-header th {
         font-size: 13px;
         height: 30px;
     }
-    #positions-table-body td {
+    .table-body td {
         font-size: 14px;
         height: 32px;
     }
 
     /* Column Widths */
-    #positions-table-wrapper .security {
+    .security {
         width: 25%;
     }
 
-    #positions-table-wrapper .symbol {
+    .symbol {
         width: 7%;
     }
 
-    #positions-table-wrapper .quantity {
+    .quantity {
         width: 7%;
     }
 
-    #positions-table-wrapper .last-trade {
+    .last-trade {
         width: 9%;
     }
 
-    #positions-table-wrapper .market-value {
+    .market-value {
         width: 12%;
     }
 
-    #positions-table-wrapper .price-paid {
+    .price-paid {
         width: 10%;
     }
 
-    #positions-table-wrapper .total-cost {
+    .total-cost {
         width: 10%;
     }
 
-    #positions-table-wrapper .gain {
+    .gain {
         width: 11%;
     }
 
-    #positions-table-wrapper .gain-percent {
+    .gain-percent {
         width: 9%;
     }
 }

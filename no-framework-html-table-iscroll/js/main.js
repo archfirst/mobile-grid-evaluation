@@ -32,50 +32,43 @@ $(document).ready(function() {
     });
 
     // Render table
-    var table = $('#positions-table-body');
+    var table = $('.jsPositionTableBody');
     $.each(positions, function(index, position) {
         table.append(template(position));
     });
 
     // Display window size on resize events
     function displayWindowSize() {
-        /*jshint validthis:true */
-        var win = $(this);
-        $('.window-size').html('(' + win.width() + ', ' + win.height() + ')');
+        var win = $(window);
+        $('.jsWindowSsize').html('(' + win.width() + ', ' + win.height() + ')');
     }
     $(window).resize(displayWindowSize);
 
     // Show selection on click events
-    $('#positions-table-body tr').click(function() {
+    $('.jsPositionTableBody tr').click(function() {
         var security = $(this).find('.security').html();
-        $('#selected-position').html(security);
+        $('.selected-position').html(security);
     });
 
     // Fit table on resize events
-    var headerHeight = $('#positions-header h1').outerHeight(true);
-    var selectionInfoHeight = $('#selected-position').outerHeight(true);
-    var tableHeaderHeight = $('#positions-table-header-wrapper').outerHeight(true);
+    var headerHeight = $('.header').outerHeight(true);
+    var selectionInfoHeight = $('.selected-position').outerHeight(true);
+    var tableHeaderHeight = $('.table-header').outerHeight(true);
     var layoutInfoHeight = $('.layout-info').outerHeight(true);
     var fixedSectionsHeight =
         headerHeight + selectionInfoHeight + tableHeaderHeight + layoutInfoHeight;
 
     // Setup iScroll
     document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-    var myScroll = new iScroll('positions-table-body-wrapper');
+    var myScroll = new iScroll($('.jsPositionTableBodyWrapper')[0], {'hideScrollbar': true});
 
     // Fit table when window resizes
     function fitTable() {
-        /*jshint validthis:true */
-        var winHeight = $(this).height();
-        $('#positions-table-body-wrapper').height(winHeight - fixedSectionsHeight);
+        var winHeight = $(window).height();
+        $('.jsPositionTableBodyWrapper').height(winHeight - fixedSectionsHeight);
         setTimeout(function() {
             myScroll.refresh();
         }, 0);
-        var headerColumns = $('#positions-table-header tr th');
-        var bodyColumns = $('#positions-table-body tr:first td');
-        for (var i = 0; i < headerColumns.length; i++) {
-            $(headerColumns[i]).width($(bodyColumns[i]).width());
-        }
     }
     $(window).resize(fitTable);
 

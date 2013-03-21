@@ -4,48 +4,42 @@
     <meta charset="utf-8">
     <title>No Framework | HTML table - iScroll</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/table.css">
 </head>
 
 <body>
-    <section id="positions">
+    <header class="header">
+        <h1 class="h1">No Fmwk | HTML table - iScroll</h1>
+    </header>
 
-        <header id="positions-header">
-            <h1>No Framework | HTML table - iScroll</h1>
-        </header>
+    <div class="selected-position">
+    </div>
 
-        <section id="positions-section">
-            <div id="selected-position"></div>
+    <table class="table-header">
+        <tr>
+            <th class="priority3 align-left security">Security</th>
+            <th class="priority1 align-center symbol">Symbol</th>
+            <th class="priority1 align-right quantity">Qty</th>
+            <th class="priority1 align-right last-trade">Last</th>
+            <th class="priority1 align-right market-value">Mkt Value</th>
+            <th class="priority2 align-right price-paid">Price Paid</th>
+            <th class="priority3 align-right total-cost">Total Cost</th>
+            <th class="priority3 align-right gain">Gain</th>
+            <th class="priority2 align-right gain-percent">Gain %</th>
+        </tr>
+    </table>
 
-            <div id="positions-table-wrapper">
-                <div id="positions-table-header-wrapper">
-                    <table id="positions-table-header">
-                        <tr>
-                            <th class="priority3 align-left security">Security</th>
-                            <th class="priority1 align-center symbol">Symbol</th>
-                            <th class="priority1 align-right quantity">Quantity</th>
-                            <th class="priority1 align-right last-trade">Last Trade</th>
-                            <th class="priority1 align-right market-value">Market Value</th>
-                            <th class="priority2 align-right price-paid">Price Paid</th>
-                            <th class="priority3 align-right total-cost">Total Cost</th>
-                            <th class="priority3 align-right gain">Gain</th>
-                            <th class="priority2 align-right gain-percent">Gain %</th>
-                        </tr>
-                    </table>
-                </div>
-                <div id="positions-table-body-wrapper">
-                    <div id="positions-table-body-scroller">
-                        <table id="positions-table-body">
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div class="jsPositionTableBodyWrapper table-body-wrapper">
+        <div class="table-body-scroller">
+            <table class="jsPositionTableBody table-body">
+            </table>
+        </div>
+    </div>
 
-            <div class="layout-info">, Window Size: <span class="window-size"></span></div>
-        </section>
-
-    </section>
+    <div class="layout-info">, Window Size: <span class="jsWindowSsize"></span>
+    </div>
 
     <script id="position-template" type="text/x-mustache-tmpl">
     <tr>
