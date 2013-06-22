@@ -34,7 +34,7 @@ space between the fixed sections above and below it.
 5. The table should adapt to the width of the device/browser window, showing the most important
 columns that can fit in the available width. For the purpose of this exercise, assume three layouts:
     * Wide (900+): Shows all nine columns, row height = 32px, font size = 14px
-    * Medium (500-899): Drops "Security", "Total Cost" and "Gain" (showing 6 columns), row height = 44px, font size = 16px 
+    * Medium (500-899): Drops "Security", "Total Cost" and "Gain" (showing 6 columns), row height = 44px, font size = 16px
     * Narrow (0-499): Drops "Price Paid" and "Gain %" (showing only 4 columns), row height = 44px, font size = 16px
 6. In case of a mobile device, the table should respond to orientation changes, conforming to the
 requirements described above.
@@ -47,8 +47,7 @@ Grids in Scope
 3. [jqGrid](http://www.trirand.com)
 4. [SlickGrid](https://github.com/mleibman/SlickGrid/wiki)
 5. [DataTables](http://www.datatables.net)
-6. [jqPivot](https://github.com/roblarsen/jqPivot)
-7. [Archfirst Grid](https://archfirst.googlecode.com/svn/trunk/html/libs/archfirst/jquery-afgrid)
+6. [Archfirst Grid](https://archfirst.googlecode.com/svn/trunk/html/libs/archfirst/jquery-afgrid)
 
 If you'd like to include other grids as part of this evaluation, please implement the requirements
 and send us a pull request.
@@ -203,20 +202,6 @@ Results (Reqirements 1-6)
         <tr>
             <td>9</td>
             <td>jQuery Mobile</td>
-            <td>jQPivot</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Rob Larsen</td>
-            <td>Not Started</td>
-            <td></td>
-            <td></td>
-        <tr>
-            <td>10</td>
-            <td>jQuery Mobile</td>
             <td>Archfirst Grid</td>
             <td></td>
             <td></td>
@@ -226,9 +211,8 @@ Results (Reqirements 1-6)
             <td></td>
             <td>Manish Shanker</td>
             <td>Not Started</td>
+            <td><a href="https://archfirst.googlecode.com/svn/trunk/html/libs/archfirst/jquery-afgrid/mge/grid-mge.html" target="_blank">Run</a></td>
             <td></td>
-            <td></td>
-        </tr>
         </tr>
     </tbody>
 </table>
@@ -374,20 +358,6 @@ Results (Reqirements 7 - Scrolling Table Body)
         </tr>
         <tr>
             <td>9</td>
-            <td>jQuery Mobile</td>
-            <td>jqPivot</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>10</td>
             <td>jQuery Mobile</td>
             <td>Archfirst Grid</td>
             <td></td>
