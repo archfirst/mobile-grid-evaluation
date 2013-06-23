@@ -1,21 +1,21 @@
 /*global positions:true */
-$(document).ready(function () {
+$(document).ready(function() {
     'use strict';
 
     // Register Handlebar helpers
-    Handlebars.registerHelper('formatMoney', function (amount) {
+    Handlebars.registerHelper('formatMoney', function(amount) {
         return (amount >= 0) ?
             '$' + $.format.number(amount, '#,##0.00') :
             '($' + $.format.number(-amount, '#,##0.00') + ')';
     });
 
-    Handlebars.registerHelper('formatPercent', function (percent) {
+    Handlebars.registerHelper('formatPercent', function(percent) {
         return (percent >= 0) ?
             $.format.number(percent, '#,##0.00') + '%' :
             '(' + $.format.number(-percent, '#,##0.00') + '%)';
     });
 
-    Handlebars.registerHelper('getSign', function (number) {
+    Handlebars.registerHelper('getSign', function(number) {
         return (number >= 0) ? 'positive' : 'negative';
     });
 
@@ -24,7 +24,7 @@ $(document).ready(function () {
     var template = Handlebars.compile(src);
 
     // Compute position values
-    $.each(positions, function (index, position) {
+    $.each(positions, function(index, position) {
         position.marketValue = position.lastTrade * position.quantity;
         position.totalCost = position.pricePaid * position.quantity;
         position.gain = position.marketValue - position.totalCost;
@@ -33,20 +33,19 @@ $(document).ready(function () {
 
     // Render table
     var table = $('#positions-table-body');
-    $.each(positions, function (index, position) {
+    $.each(positions, function(index, position) {
         table.append(template(position));
     });
 
     // Display window size on resize events
     function displayWindowSize() {
-        /*jshint validthis:true */
-        var win = $(this);
+        var win = $(window);
         $('.window-size').html('(' + win.width() + ', ' + win.height() + ')');
     }
     $(window).resize(displayWindowSize);
 
     // Show selection on click events
-    $('#positions-table-body tr').click(function () {
+    $('#positions-table-body tr').click(function() {
         var security = $(this).find('.security').html();
         $('#selected-position').html(security);
     });
@@ -61,8 +60,7 @@ $(document).ready(function () {
         headerHeight + selectionInfoHeight + tableHeaderHeight + layoutInfoHeight + fudgeFactor;
 
     function fitTable() {
-        /*jshint validthis:true */
-        var win = $(this);
+        var win = $(window);
         $('#positions-table-body-wrapper').height(
             win.height() - fixedSectionsHeight);
         var headerColumns = $('#positions-table-header tr th');

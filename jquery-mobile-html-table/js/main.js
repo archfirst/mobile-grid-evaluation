@@ -28,7 +28,7 @@ $(document).ready(function() {
         position.marketValue = position.lastTrade * position.quantity;
         position.totalCost = position.pricePaid * position.quantity;
         position.gain = position.marketValue - position.totalCost;
-        position.gainPercent = (position.gain/position.totalCost) * 100;
+        position.gainPercent = (position.gain / position.totalCost) * 100;
     });
 
     // Render table
@@ -39,14 +39,13 @@ $(document).ready(function() {
 
     // Display window size on resize events
     function displayWindowSize() {
-        /*jshint validthis:true */
-        var win = $(this);
+        var win = $(window);
         $('.window-size').html('(' + win.width() + ', ' + win.height() + ')');
     }
     $(window).resize(displayWindowSize);
 
     // Show selection on click events
-    $('#positions-table-body tr').click(function () {
+    $('#positions-table-body tr').click(function() {
         var security = $(this).find('.security').html();
         $('#selected-position').html(security);
     });
@@ -61,8 +60,7 @@ $(document).ready(function() {
         headerHeight + positionSectionPadding + selectionInfoHeight + tableHeaderHeight + layoutInfoHeight;
 
     function fitTable() {
-        /*jshint validthis:true */
-        var win = $(this);
+        var win = $(window);
         $('#positions-table-body-wrapper').height(
             win.height() - fixedSectionsHeight);
         var headerColumns = $('#positions-table-header tr th');

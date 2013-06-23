@@ -201,7 +201,7 @@ Results (Reqirements 1-6)
         </tr>
         <tr>
             <td>9</td>
-            <td>jQuery Mobile</td>
+            <td>No Framework</td>
             <td>Archfirst Grid</td>
             <td></td>
             <td></td>
@@ -358,7 +358,7 @@ Results (Reqirements 7 - Scrolling Table Body)
         </tr>
         <tr>
             <td>9</td>
-            <td>jQuery Mobile</td>
+            <td>No Framework</td>
             <td>Archfirst Grid</td>
             <td></td>
             <td></td>
